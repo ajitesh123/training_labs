@@ -170,4 +170,42 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Blog design tokens (SnapSDR-style graph paper) */
+:root {
+  --blog-background-secondary: #fafafa;
+  --blog-accent-blue: #0070f3;
+  --blog-text-secondary: #666666;
+  --blog-text-muted: #999999;
+  --blog-border-default: #eaeaea;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.spotlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(0, 112, 243, 0.05),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #0070f3 0%, #00a6ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

@@ -7,8 +7,9 @@ const geistSans = Geist({ subsets: ['latin'] })
 const geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Training Labs AI - Advanced AI Training Platform',
-  description: 'Master AI with industry-leading training programs, expert-led courses, and hands-on projects. Build expertise in machine learning, deep learning, and cutting-edge AI technologies.',
+  title: 'Training Labs — Sales Training & Coaching',
+  description:
+    'Sales training and coaching programs for reps, managers, and enablement leaders. Master discovery, demos, objection handling, negotiation, and coaching systems.',
   generator: 'v0.app',
   icons: {
     icon: [

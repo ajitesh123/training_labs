@@ -16,7 +16,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">T</span>
             </div>
-            <span className="font-bold text-xl hidden sm:inline">Training Labs AI</span>
+            <span className="font-bold text-xl hidden sm:inline">Training Labs</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -29,6 +29,9 @@ export default function Header() {
             </Link>
             <Link href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition">
               Testimonials
+            </Link>
+            <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition">
+              Blog
             </Link>
             <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition">
               About
@@ -62,6 +65,9 @@ export default function Header() {
             </Link>
             <Link href="#testimonials" className="block text-sm text-muted-foreground hover:text-foreground transition">
               Testimonials
+            </Link>
+            <Link href="/blog" className="block text-sm text-muted-foreground hover:text-foreground transition">
+              Blog
             </Link>
             <Link href="#about" className="block text-sm text-muted-foreground hover:text-foreground transition">
               About
