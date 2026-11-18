@@ -119,7 +119,7 @@ export function ConferenceTimeline() {
   return (
     <Figure
       title="Where 15 minutes go: a weak conference vs a strong one"
-      caption="Example agendas, not measured data. Shared time counts half to the parent. The ASCD study below suggests counting your own questions and how often you build on the parent’s ideas; parent talk time is a quick proxy."
+      caption="Example agendas, not measured data. Shared time counts half to the parent. The ASCD article cited above suggests counting your own questions and how often you build on the parent’s ideas; parent talk time is a quick proxy."
     >
       <div ref={ref}>
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">

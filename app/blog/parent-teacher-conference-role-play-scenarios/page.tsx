@@ -60,8 +60,8 @@ export default function ParentTeacherConferenceRolePlayPage() {
 
       <Section id="why-rehearse" title="Why rehearse parent-teacher conferences at all?">
         <p>
-          Because conferences are the one meeting most families still come to, and most teachers
-          were never taught how to run them.
+          Because nearly three in four families still come to them, and most school staff say
+          their training did not prepare them to.
         </p>
         <Figure
           title="Share of US parents who attended each school activity, 2022-23"

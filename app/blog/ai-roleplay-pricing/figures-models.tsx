@@ -33,7 +33,7 @@ export function TeamUsageHero() {
           className={`absolute inset-x-0 z-10 border-t-2 border-dashed border-ink transition-opacity delay-700 duration-500 ${inView ? 'opacity-100' : 'opacity-0'}`}
           style={{ bottom: `${linePct}%` }}
         >
-          <span className="tl-mono absolute -top-6 right-0 bg-sheet px-1 text-[9.5px] font-semibold text-ink sm:text-[10.5px]">
+          <span className="tl-mono absolute -top-6 left-0 bg-sheet px-1 text-[9.5px] font-semibold text-ink sm:text-[10.5px]">
             {team.seatMinutes} min paid per seat
           </span>
         </div>

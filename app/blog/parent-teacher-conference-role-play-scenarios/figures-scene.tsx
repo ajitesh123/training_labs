@@ -102,7 +102,7 @@ const pos = (v: number) => `${(v - 0.5) * 20}%`
 
 function ScenarioCard({ s }: { s: Scenario }) {
   return (
-    <div className="blog-fade-up border-2 border-ink bg-sheet p-4 shadow-[5px_5px_0_var(--color-ink)]">
+    <div className="blog-fade-up self-start border-2 border-ink bg-sheet p-4 shadow-[5px_5px_0_var(--color-ink)]">
       <p className="tl-mono text-[10.5px] font-semibold text-ink-2">
         Scenario {s.n} · heat {s.heat}/5 · complexity {s.complexity}/5
       </p>

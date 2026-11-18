@@ -20,6 +20,7 @@ const SESSION: Block[] = [
   { label: 'Retry opening', start: 11, end: 13, talk: true },
 ]
 const LENGTH = 14
+const fmtLen = (min: number) => (min < 1 ? `${Math.round(min * 60)} sec` : `${min} min`)
 
 const METERS: Record<Meter, { counts: (b: Block) => boolean; total: string; unit: string; retry: string }> = {
   minutes: {
@@ -81,6 +82,7 @@ export function MeterTimeline() {
                   transitionDelay: inView ? `${i * 150}ms` : '0ms',
                 }}
               >
+                {b.end - b.start >= 0.6 && <span className="absolute left-1 top-0.5 font-mono text-[10px] font-semibold text-ink">{i + 1}</span>}
                 {counted && b.end - b.start >= 1 && (
                   <span
                     key={meter}
@@ -94,17 +96,15 @@ export function MeterTimeline() {
             )
           })}
         </div>
-        <div className="relative mt-2 h-24 sm:h-12">
+        <ol className="mt-3 grid grid-cols-1 gap-x-4 gap-y-1 text-[12.5px] text-ink-2 sm:grid-cols-3">
           {SESSION.map((b, i) => (
-            <p
-              key={b.label}
-              className={`tl-mono absolute text-[9.5px] leading-tight text-ink-2 sm:text-[10.5px] ${i % 2 ? 'top-12 sm:top-6' : 'top-0'}`}
-              style={{ left: `${Math.min((b.start / LENGTH) * 100, 82)}%` }}
-            >
+            <li key={b.label} className="flex items-baseline gap-2">
+              <span className="tl-mono text-[10.5px] font-semibold text-ink">{i + 1}</span>
               {b.label}
-            </p>
+              <span className="font-mono text-[11px]">{fmtLen(b.end - b.start)}</span>
+            </li>
           ))}
-        </div>
+        </ol>
         <div className="mt-4 grid gap-3 sm:grid-cols-[auto_1fr] sm:items-center">
           <div className="border-2 border-ink bg-sheet px-4 py-3 shadow-[5px_5px_0_var(--color-ink)]">
             <p key={meter} className="blog-fade-up font-mono text-3xl font-bold text-ink">
@@ -167,7 +167,7 @@ export function QuoteChecklist() {
             </li>
           ))}
         </ul>
-        <div className="flex flex-col gap-4 border-2 border-ink bg-paper p-4">
+        <div className="flex flex-col gap-4 self-start border-2 border-ink bg-paper p-4">
           <p className="tl-mono text-[10.5px] font-semibold text-ink-2">Quote completeness</p>
           <p className="font-mono text-4xl font-bold text-ink">
             <CountUp value={done} start={inView} />

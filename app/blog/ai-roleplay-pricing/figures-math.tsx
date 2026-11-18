@@ -106,11 +106,12 @@ export function BreakEvenChart() {
               <span className="tl-mono absolute left-2 top-2 bg-paper px-1 text-[9.5px] font-semibold text-ink">Minutes cheaper</span>
             </div>
           </div>
-          <div className="tl-mono ml-14 mt-1 flex justify-between text-[10px] text-ink-2">
-            <span>0</span>
-            <span>500</span>
-            <span>1,000 min per rep</span>
+          <div className="tl-mono relative ml-14 mt-1 h-4 text-[10px] text-ink-2">
+            <span className="absolute left-0">0</span>
+            <span className="absolute left-1/2 -translate-x-1/2">500</span>
+            <span className="absolute right-0">1,000</span>
           </div>
+          <p className="tl-mono ml-14 text-center text-[10px] text-ink-2">Minutes per rep, per month</p>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-ink-2">
             <li className="flex items-center gap-2">
               <span className="h-[3px] w-5 bg-[var(--color-signal)]" /> Seat, per practicing rep:{' '}
