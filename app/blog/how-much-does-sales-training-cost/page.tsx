@@ -366,7 +366,7 @@ export default function SalesTrainingCostPage() {
 
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
-        <RelatedReading slugs={['best-ai-sales-training-tools-2026']} />
+        <RelatedReading slugs={['best-ai-sales-training-tools-2026', 'ai-roleplay-pricing', 'parent-teacher-conference-role-play-scenarios']} />
       </section>
     </PostShell>
   )
