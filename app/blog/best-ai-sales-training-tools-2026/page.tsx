@@ -239,7 +239,7 @@ export default function BestAiSalesTrainingToolsPage() {
                     'Session analytics, meeting bots, and SIP calling via public API',
                     'Team practice that mirrors real selling environments, not a chatbot sandbox',
                   ]}
-                  pricing="Standard: $12/month (100 minutes) · Premium: $20/month (unlimited) · Team/org plans available"
+                  pricing="25 free minutes · Starter $20/month (150 minutes) · Pro $99/month (900 minutes, unused minutes roll over) · Teams from $299/month (15 seats) · Enterprise $0.07/minute (as of November 2026)"
                   pros={[
                     'Only shortlisted platform with first-class MCP + coding-agent workflow',
                     'True Meet / phone / slides practice channels',
