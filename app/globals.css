@@ -182,6 +182,78 @@
   --blog-text-secondary: #666666;
   --blog-text-muted: #999999;
   --blog-border-default: #eaeaea;
+  --blog-accent-cyan: #00a6ed;
+  --blog-accent-green: #10b981;
+  --blog-accent-amber: #f59e0b;
+  --blog-accent-rose: #f43f5e;
+  --blog-ink: #0a0a0a;
+}
+
+/* Blog figure motion. Figures toggle these on scroll via useInView. */
+@keyframes blog-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blog-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes blog-pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes blog-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+.blog-fade-up {
+  animation: blog-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.blog-float {
+  animation: blog-float 5s ease-in-out infinite;
+}
+
+.blog-pulse-ring {
+  animation: blog-pulse-ring 1.8s ease-out infinite;
+}
+
+.blog-shimmer {
+  animation: blog-shimmer 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-fade-up,
+  .blog-float,
+  .blog-pulse-ring,
+  .blog-shimmer {
+    animation: none;
+  }
 }
 
 .grid-pattern {

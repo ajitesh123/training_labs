@@ -1,13 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { siteUrl } from '@/lib/site'
 import './globals.css'
 
 const geistSans = Geist({ subsets: ['latin'] })
 const geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Training Labs — Sales Training & Coaching',
+  metadataBase: new URL(siteUrl),
+  title:'Training Labs — Sales Training & Coaching',
   description:
     'Sales training and coaching programs for reps, managers, and enablement leaders. Master discovery, demos, objection handling, negotiation, and coaching systems.',
   }
