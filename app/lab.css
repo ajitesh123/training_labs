@@ -156,8 +156,9 @@
     border-left: 1px dashed rgba(28, 27, 25, 0.16);
   }
   .tl-line .tl-stamp {
+    /* The list's 168px right padding is the stamp margin, outside each line's box. */
     position: absolute;
-    right: 10px;
+    right: -160px;
     top: calc(50% - 15px);
     margin-top: 0;
   }
@@ -170,7 +171,7 @@
 }
 @keyframes tl-print {
   to {
-    clip-path: inset(-40px -40px -40px 0);
+    clip-path: inset(-40px -220px -40px 0);
   }
 }
 @keyframes tl-stamp {

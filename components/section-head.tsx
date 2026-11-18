@@ -15,7 +15,7 @@ export function SectionHead({ kicker, title, aside }: SectionHeadProps) {
     <div className="mb-7 grid items-end gap-4 sm:mb-11 lg:grid-cols-2 lg:gap-10">
       <div>
         <p className="tl-mono mb-3.5 text-xs font-semibold text-ink-2">[ {kicker} ]</p>
-        <h2 className="font-mono text-[28px] font-medium uppercase leading-[1.08] tracking-[-0.03em] text-ink sm:text-[40px]">
+        <h2 className="text-balance font-mono text-[28px] font-medium uppercase leading-[1.08] tracking-[-0.03em] text-ink sm:text-[40px]">
           {title}
         </h2>
       </div>

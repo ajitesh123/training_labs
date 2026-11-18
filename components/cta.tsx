@@ -11,7 +11,7 @@ function Bubble({ text, fill, side }: { text: string; fill: string; side: 'left'
     <svg
       viewBox="0 0 230 120"
       aria-hidden
-      className={`absolute hidden w-[210px] lg:block xl:w-[230px] ${side === 'left' ? 'left-6 top-16 -rotate-6 xl:left-11' : 'bottom-14 right-6 rotate-[5deg] xl:right-11'}`}
+      className={`absolute hidden w-[220px] xl:block ${side === 'left' ? 'left-6 top-16 -rotate-6' : 'bottom-14 right-6 rotate-[5deg]'}`}
     >
       <path d={path} fill={fill} stroke="var(--color-ink)" strokeWidth="2.2" strokeLinejoin="round" />
       <text x="116" y={side === 'left' ? 54 : 50} textAnchor="middle" className="fill-ink font-mono text-[15px] font-semibold">

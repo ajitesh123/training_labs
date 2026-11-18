@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useInView } from '@/components/blog/figures'
 
 type Line = { who: string; text: string; rep: boolean; stamp?: Stamp }
 type Stamp = { label: string; tone: 'green' | 'red'; order: 1 | 2 | 3 }
@@ -35,19 +36,21 @@ function StampMark({ stamp }: { stamp: Stamp }) {
 /**
  * Hero proof: an example practice call printed onto a coach's sheet. Lines print
  * in, the rep's best answers get highlighted, stamps land, then the score shows.
- * Replays on a timer; reduced-motion users see the finished sheet.
+ * Starts when scrolled into view (phones reach it below the fold), then replays
+ * on a timer; reduced-motion users see the finished sheet.
  */
 export function CallSheet() {
   const [run, setRun] = useState(0)
+  const { ref, inView } = useInView<HTMLDivElement>(0.35)
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (!inView || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const id = window.setInterval(() => setRun((n) => n + 1), REPLAY_MS)
     return () => window.clearInterval(id)
-  }, [])
+  }, [inView])
 
   return (
-    <div key={run} className="tl-sheets play relative pb-4 pr-3.5 pt-2.5">
+    <div key={run} ref={ref} className={`tl-sheets relative pb-4 pr-3.5 pt-2.5 ${inView ? 'play' : ''}`}>
       <div className="absolute inset-[26px_-4px_0_20px] rotate-3 border-2 border-ink bg-sky-soft" />
       <div
         className="relative border-2 border-ink bg-sheet shadow-[7px_7px_0_var(--color-ink)]"
