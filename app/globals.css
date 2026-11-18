@@ -1,7 +1,24 @@
 @import 'tailwindcss';
 @import 'shadcn/tailwind.css';
+@import './lab.css';
 
 @theme inline {
+  /* Practice-lab theme (homepage and blog shell) */
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+  --color-paper: #f4efe8;
+  --color-sheet: #fffdf8;
+  --color-ink: #1c1b19;
+  --color-ink-2: #55524c;
+  --color-sky: #8ccbff;
+  --color-sky-soft: #d8eeff;
+  --color-butter: #ffe15a;
+  --color-peach: #ffcfae;
+  --color-mint: #b7f0d8;
+  --color-stamp-green: #2e7d4f;
+  --color-stamp-red: #c8432b;
+  --color-flame: #ff7a3d;
+  --color-signal: #1f6fe0;
   --color-primary: #2563eb;
   --color-primary-foreground: #ffffff;
   --color-secondary: #1e40af;
@@ -175,18 +192,18 @@
   }
 }
 
-/* Blog design tokens (SnapSDR-style graph paper) */
+/* Blog design tokens, mapped onto the practice-lab palette */
 :root {
-  --blog-background-secondary: #fafafa;
-  --blog-accent-blue: #0070f3;
-  --blog-text-secondary: #666666;
-  --blog-text-muted: #999999;
-  --blog-border-default: #eaeaea;
+  --blog-background-secondary: #f7f3ed;
+  --blog-accent-blue: #1f6fe0;
+  --blog-text-secondary: #55524c;
+  --blog-text-muted: #8d8981;
+  --blog-border-default: #e6e0d6;
   --blog-accent-cyan: #00a6ed;
   --blog-accent-green: #10b981;
   --blog-accent-amber: #f59e0b;
   --blog-accent-rose: #f43f5e;
-  --blog-ink: #0a0a0a;
+  --blog-ink: #1c1b19;
 }
 
 /* Blog figure motion. Figures toggle these on scroll via useInView. */
