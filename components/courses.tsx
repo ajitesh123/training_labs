@@ -1,11 +1,21 @@
-import { Button } from '@/components/ui/button'
-import { Clock, Users, Star } from 'lucide-react'
+import { SectionHead, SectionLede, wrap } from '@/components/section-head'
+import { bookingUrl } from '@/lib/site'
 
-const courses = [
+type Level = 'Beginner' | 'Intermediate' | 'Advanced'
+
+const courses: {
+  title: string
+  description: string
+  level: Level
+  duration: string
+  students: string
+  rating: string
+  price: string
+}[] = [
   {
     title: 'Discovery Call Mastery',
     description:
-      'Run sharper discovery conversations — pain, impact, stakeholders, and next steps that advance deals.',
+      'Run sharper discovery conversations: pain, impact, stakeholders, and next steps that advance deals.',
     level: 'Beginner',
     duration: '8 weeks',
     students: '12,500+',
@@ -45,7 +55,7 @@ const courses = [
   {
     title: 'Sales Coaching for Managers',
     description:
-      'Build a coaching cadence — call reviews, pipeline inspection, and skill drills that raise team performance.',
+      'Build a coaching cadence: call reviews, pipeline inspection, and skill drills that raise team performance.',
     level: 'Beginner',
     duration: '6 weeks',
     students: '9,100+',
@@ -64,76 +74,52 @@ const courses = [
   },
 ]
 
+const LEVEL_FILL: Record<Level, string> = {
+  Beginner: 'bg-mint',
+  Intermediate: 'bg-sky',
+  Advanced: 'bg-peach',
+}
+
 export default function Courses() {
   return (
-    <section id="courses" className="py-20 md:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Featured Courses
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Sales training and coaching courses for individual contributors,
-            managers, and enablement teams — at every stage of the funnel.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="courses" className="scroll-mt-20 border-b-2 border-ink py-14 sm:py-24">
+      <div className={wrap}>
+        <SectionHead
+          kicker="Courses"
+          title="Featured Courses"
+          aside={
+            <SectionLede>
+              Sales training and coaching courses for individual contributors, managers, and
+              enablement teams, at every stage of the funnel.
+            </SectionLede>
+          }
+        />
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {courses.map((course) => (
-            <div
+            <article
               key={course.title}
-              className="bg-white rounded-lg border border-border overflow-hidden hover:shadow-lg transition group"
+              className="flex flex-col border-2 border-ink bg-sheet transition-[transform,box-shadow] duration-200 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[6px_6px_0_var(--color-ink)] motion-reduce:transition-none"
             >
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-primary text-xs font-medium rounded-full">
-                    {course.level}
-                  </span>
-                  <div className="flex items-center gap-1">
-                    <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                    <span className="text-sm font-medium">{course.rating}</span>
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {course.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {course.description}
-                </p>
-
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock size={16} />
-                    <span>{course.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Users size={16} />
-                    <span>{course.students} students</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <div className="text-2xl font-bold text-primary">
-                    {course.price}
-                  </div>
-                  <Button
-                    size="sm"
-                    variant="default"
-                    className="group-hover:bg-secondary"
-                  >
-                    Enroll Now
-                  </Button>
+              <div className={`tl-mono flex items-center justify-between border-b-2 border-ink px-4 py-2.5 text-xs font-semibold ${LEVEL_FILL[course.level]}`}>
+                <span>{course.level}</span>
+                <span>★ {course.rating}</span>
+              </div>
+              <div className="flex flex-1 flex-col px-4 py-5">
+                <h3 className="mb-2 text-xl font-semibold leading-tight tracking-tight text-ink">{course.title}</h3>
+                <p className="mb-4 flex-1 text-[15px] text-ink-2">{course.description}</p>
+                <div className="tl-mono flex flex-wrap gap-2 text-[11px] font-semibold">
+                  <span className="border-[1.5px] border-ink px-1.5 py-0.5">{course.duration}</span>
+                  <span className="border-[1.5px] border-ink px-1.5 py-0.5">{course.students} students</span>
                 </div>
               </div>
-            </div>
+              <div className="flex items-center justify-between border-t-2 border-ink px-4 py-3">
+                <span className="font-mono text-[26px] font-semibold leading-none tracking-tight text-ink">{course.price}</span>
+                <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="tl-btn tl-btn-sm">
+                  Enroll now
+                </a>
+              </div>
+            </article>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
-            View All Courses
-          </Button>
         </div>
       </div>
     </section>

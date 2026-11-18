@@ -35,49 +35,31 @@ export function AnimatedBars({ items, format, max }: AnimatedBarsProps) {
   const top = max ?? Math.max(...items.map((i) => i.value))
 
   return (
-    <div ref={ref} className="space-y-3">
+    <div ref={ref} className="space-y-3.5">
       {items.map((item, i) => {
         const pct = Math.max((item.value / top) * 100, 1.5)
         const delay = DELAY_CLASSES[Math.min(i, DELAY_CLASSES.length - 1)]
         return (
           <div key={item.label}>
-            <div className="mb-1 flex items-baseline justify-between gap-3 text-sm">
-              <span
-                className={
-                  item.highlight
-                    ? 'font-semibold text-black'
-                    : 'text-[var(--blog-text-secondary)]'
-                }
-              >
+            <div className="mb-1.5 flex items-baseline justify-between gap-3 text-sm">
+              <span className={item.highlight ? 'font-semibold text-ink' : 'text-ink-2'}>
                 {item.label}
-                {item.note && (
-                  <span className="ml-2 text-xs text-[var(--blog-text-muted)]">
-                    {item.note}
-                  </span>
-                )}
+                {item.note && <span className="tl-mono ml-2 text-[10.5px] text-ink-2">{item.note}</span>}
               </span>
               <CountUp
                 value={item.value}
                 start={inView}
                 format={(n) => formatNumber(n, format)}
-                className={`shrink-0 font-semibold ${
-                  item.highlight ? 'text-[var(--blog-accent-blue)]' : 'text-black'
-                }`}
+                className="shrink-0 font-mono font-semibold text-ink"
               />
             </div>
-            <div className="h-3 overflow-hidden rounded-full bg-white ring-1 ring-[var(--blog-border-default)]">
+            <div className="h-4 border-2 border-ink bg-paper">
               <div
-                className={`relative h-full overflow-hidden rounded-full transition-[width] duration-1000 ease-out motion-reduce:transition-none ${delay} ${
-                  item.highlight
-                    ? 'bg-gradient-to-r from-[var(--blog-accent-blue)] to-[var(--blog-accent-cyan)]'
-                    : 'bg-gray-300'
+                className={`h-full border-r-2 border-ink transition-[width] duration-1000 ease-out motion-reduce:transition-none ${delay} ${
+                  item.highlight ? 'bg-butter' : 'bg-sky'
                 }`}
                 style={{ width: inView ? `${pct}%` : '0%' }}
-              >
-                {item.highlight && inView && (
-                  <span className="blog-shimmer absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-                )}
-              </div>
+              />
             </div>
           </div>
         )

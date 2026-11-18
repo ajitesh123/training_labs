@@ -286,7 +286,7 @@ export default function SalesTrainingCostPage() {
           For a side-by-side look at features rather than price, our{' '}
           <Link
             href="/blog/best-ai-sales-training-tools-2026"
-            className="text-[var(--blog-accent-blue)] underline decoration-[var(--blog-accent-blue)]/30 underline-offset-2"
+            className="text-signal underline decoration-signal/40 underline-offset-2 hover:decoration-signal"
           >
             guide to AI sales training tools
           </Link>{' '}
@@ -365,7 +365,7 @@ export default function SalesTrainingCostPage() {
       />
 
       <section className="mb-12">
-        <h2 className="mb-4 text-xl font-bold text-black">Related reading</h2>
+        <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
         <RelatedReading slugs={['best-ai-sales-training-tools-2026']} />
       </section>
     </PostShell>

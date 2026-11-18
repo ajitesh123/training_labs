@@ -14,20 +14,14 @@ export function Callout({ label, children, tone = 'answer' }: CalloutProps) {
   const answer = tone === 'answer'
   return (
     <div
-      className={`my-8 rounded-2xl border p-5 sm:p-6 ${
-        answer
-          ? 'border-[var(--blog-accent-blue)]/30 bg-gradient-to-br from-blue-50/70 to-white'
-          : 'border-[var(--blog-border-default)] bg-[var(--blog-background-secondary)]'
+      className={`my-8 border-2 border-ink p-5 sm:p-6 ${
+        answer ? 'bg-sheet shadow-[6px_6px_0_var(--color-ink)]' : 'border-dashed bg-paper'
       }`}
     >
-      <p
-        className={`mb-2 text-xs font-semibold uppercase tracking-wider ${
-          answer ? 'text-[var(--blog-accent-blue)]' : 'text-[var(--blog-text-muted)]'
-        }`}
-      >
-        {label}
+      <p className="tl-mono mb-3 inline-block text-[11.5px] font-semibold text-ink">
+        <span className={answer ? 'bg-butter px-1.5 py-0.5' : ''}>{label}</span>
       </p>
-      <div className="space-y-3 text-[16px] leading-relaxed text-[#222]">{children}</div>
+      <div className="space-y-3 text-[16px] leading-relaxed text-ink">{children}</div>
     </div>
   )
 }

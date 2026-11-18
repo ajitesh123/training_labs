@@ -1,106 +1,69 @@
-'use client'
-
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import { BlogFooter } from '@/components/blog/blog-footer'
 import { BlogHeader } from '@/components/blog/blog-header'
+import { GuideThumb } from '@/components/latest-guides'
 import { blogPosts } from '@/lib/blog-posts'
 
+const CARD_HOVER =
+  'transition-[transform,box-shadow] duration-200 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[6px_6px_0_var(--color-ink)] motion-reduce:transition-none'
+
 export default function BlogIndexPage() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   const featured = blogPosts.find((post) => post.featured) ?? blogPosts[0]
   const rest = blogPosts.filter((post) => post.slug !== featured?.slug)
 
   return (
-    <div className="min-h-screen bg-white relative overflow-x-clip light">
-      <div className="spotlight" />
-      <div className="grid-pattern fixed inset-0 pointer-events-none" />
-
+    <div className="relative min-h-screen overflow-x-clip bg-paper text-ink">
       <BlogHeader />
 
-      <main className="pt-24 pb-16">
-        <div
-          className={`max-w-7xl mx-auto px-4 sm:px-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+      <main className="pb-16 pt-24 sm:pt-28">
+        <div className="blog-fade-up mx-auto max-w-7xl px-4 sm:px-6">
           <header className="mb-12 max-w-3xl">
-            <p className="text-sm font-medium text-[var(--blog-accent-blue)] mb-3">
-              Training Labs Blog
-            </p>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-black mb-4">
-              Sales training & coaching insights
+            <p className="tl-mono mb-4 text-xs font-semibold text-ink-2">[ Training Labs blog ]</p>
+            <h1 className="mb-4 text-balance font-mono text-4xl font-medium uppercase leading-[1.06] tracking-[-0.03em] sm:text-5xl">
+              Sales training &amp; coaching insights
             </h1>
-            <p className="text-lg text-[var(--blog-text-secondary)] leading-relaxed">
-              Practical buyer&apos;s guides on coaching platforms, roleplay
-              systems, and enablement programs revenue teams actually use.
+            <p className="text-lg leading-relaxed text-ink-2">
+              Practical buyer&apos;s guides on coaching platforms, roleplay systems, and enablement
+              programs revenue teams actually use.
             </p>
           </header>
 
           {featured && (
             <Link
               href={`/blog/${featured.slug}`}
-              className="block mb-10 group rounded-2xl border border-[var(--blog-border-default)] bg-white overflow-hidden hover:shadow-lg transition-shadow"
+              className={`group mb-10 grid border-2 border-ink bg-sheet md:grid-cols-2 ${CARD_HOVER}`}
             >
-              <div className="grid md:grid-cols-2">
-                <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[280px] bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="absolute w-48 h-48 bg-[var(--blog-accent-blue)]/30 rounded-full blur-3xl" />
-                    <span className="relative text-white/80 text-sm font-medium tracking-wide uppercase">
-                      Featured Guide
-                    </span>
-                  </div>
+              <div className="md:border-r-2 md:border-ink [&>*]:border-b-2 md:[&>*]:border-b-0">
+                <GuideThumb post={featured} height="h-[200px] md:h-full md:min-h-[300px]" />
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-8">
+                <div className="tl-mono mb-4 flex flex-wrap items-center gap-3 text-[11px] font-semibold text-ink-2">
+                  <span className="border-2 border-ink bg-butter px-2 py-0.5 text-ink">Featured · {featured.category}</span>
+                  <span>{featured.date}</span>
+                  <span>· {featured.readTime}</span>
                 </div>
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-3 text-sm">
-                    <span className="px-3 py-1 rounded-full bg-[var(--blog-accent-blue)]/10 text-[var(--blog-accent-blue)] font-medium">
-                      {featured.category}
-                    </span>
-                    <span className="text-[var(--blog-text-muted)]">
-                      {featured.date}
-                    </span>
-                    <span className="text-[var(--blog-text-muted)]">
-                      · {featured.readTime}
-                    </span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3 group-hover:text-[var(--blog-accent-blue)] transition-colors">
-                    {featured.title}
-                  </h2>
-                  <p className="text-[var(--blog-text-secondary)] leading-relaxed">
-                    {featured.excerpt}
-                  </p>
-                </div>
+                <h2 className="mb-3 text-2xl font-semibold leading-snug text-ink group-hover:underline group-hover:underline-offset-4 sm:text-3xl">
+                  {featured.title}
+                </h2>
+                <p className="leading-relaxed text-ink-2">{featured.excerpt}</p>
               </div>
             </Link>
           )}
 
           {rest.length > 0 && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {rest.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group rounded-2xl border border-[var(--blog-border-default)] bg-white p-6 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-center gap-2 mb-3 text-sm">
-                    <span className="px-2.5 py-1 rounded-full bg-[var(--blog-background-secondary)] text-[var(--blog-text-secondary)] font-medium">
-                      {post.category}
-                    </span>
-                    <span className="text-[var(--blog-text-muted)]">
-                      {post.readTime}
-                    </span>
+                <Link key={post.slug} href={`/blog/${post.slug}`} className={`group block border-2 border-ink bg-sheet ${CARD_HOVER}`}>
+                  <GuideThumb post={post} />
+                  <div className="p-5">
+                    <p className="tl-mono mb-2 text-[11px] font-semibold text-ink-2">
+                      {post.category} · {post.readTime}
+                    </p>
+                    <h3 className="mb-2 text-lg font-semibold leading-snug text-ink group-hover:underline group-hover:underline-offset-4">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-ink-2">{post.excerpt}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-2 group-hover:text-[var(--blog-accent-blue)] transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-[var(--blog-text-secondary)] leading-relaxed">
-                    {post.excerpt}
-                  </p>
                 </Link>
               ))}
             </div>

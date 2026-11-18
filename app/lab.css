@@ -1,0 +1,248 @@
+/* Practice-lab theme: tactile buttons, dotted paper, the hero call sheet,
+   the practice loop and guide thumbnails. Layered as components so Tailwind
+   utilities (hidden, bg-*, responsive variants) still win. */
+@layer components {
+  .tl-mono {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .tl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    height: 2.75rem;
+    padding: 0 1.15rem;
+    border: 2px solid var(--color-ink);
+    border-bottom-width: 5px;
+    background: var(--color-sheet);
+    color: var(--color-ink);
+    font: 600 0.84rem/1 var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition:
+      transform 0.12s ease,
+      border-bottom-width 0.12s ease;
+  }
+  .tl-btn:hover {
+    transform: translateY(3px);
+    border-bottom-width: 2px;
+  }
+  .tl-btn:focus-visible {
+    outline: 3px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+  .tl-btn-lg {
+    height: 3.4rem;
+    padding: 0 1.5rem;
+    font-size: 0.9rem;
+  }
+  .tl-btn-sm {
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+    border-bottom-width: 4px;
+  }
+  .tl-dots {
+    background-image: radial-gradient(rgba(28, 27, 25, 0.13) 1.2px, transparent 1.2px);
+    background-size: 26px 26px;
+  }
+  .tl-hl {
+    background: linear-gradient(transparent 52%, var(--color-butter) 52% 94%, transparent 94%) no-repeat;
+    background-size: 0% 100%;
+    animation: tl-hl 1s 0.6s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+  }
+
+  /* call sheet --------------------------------------------------------------- */
+  .tl-line {
+    position: relative;
+    clip-path: inset(-40px 100% -40px 0);
+  }
+  .tl-mark {
+    background: linear-gradient(transparent 50%, var(--color-butter) 50% 92%, transparent 92%) no-repeat;
+    background-size: 0% 100%;
+  }
+  .tl-stamp {
+    --rot: -5deg;
+    display: inline-block;
+    padding: 6px 9px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    background: rgba(255, 253, 248, 0.55);
+    font: 700 0.72rem/1 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transform: rotate(var(--rot));
+  }
+  .tl-stamp-1 { --rot: -6deg; }
+  .tl-stamp-2 { --rot: 5deg; }
+  .tl-stamp-3 { --rot: -4deg; }
+  .tl-line .tl-stamp {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 10px;
+  }
+  .tl-score {
+    opacity: 0;
+  }
+  .tl-sheets.play .tl-line:nth-child(1) { animation: tl-print 0.7s 0.2s steps(14) forwards; }
+  .tl-sheets.play .tl-line:nth-child(2) { animation: tl-print 0.7s 1.2s steps(14) forwards; }
+  .tl-sheets.play .tl-line:nth-child(3) { animation: tl-print 0.7s 2.3s steps(14) forwards; }
+  .tl-sheets.play .tl-line:nth-child(4) { animation: tl-print 0.7s 3.4s steps(14) forwards; }
+  .tl-sheets.play .tl-line:nth-child(2) .tl-mark { animation: tl-hl 0.55s 4.4s ease-out forwards; }
+  .tl-sheets.play .tl-line:nth-child(4) .tl-mark { animation: tl-hl 0.55s 4.8s ease-out forwards; }
+  .tl-sheets.play .tl-stamp-1 { animation: tl-stamp 0.32s 5.4s cubic-bezier(0.3, 1.6, 0.6, 1) forwards; }
+  .tl-sheets.play .tl-stamp-2 { animation: tl-stamp 0.32s 6s cubic-bezier(0.3, 1.6, 0.6, 1) forwards; }
+  .tl-sheets.play .tl-stamp-3 { animation: tl-stamp 0.32s 6.6s cubic-bezier(0.3, 1.6, 0.6, 1) forwards; }
+  .tl-sheets.play .tl-score { animation: tl-pop 0.3s 7.2s ease-out forwards; }
+
+  /* practice loop ------------------------------------------------------------ */
+  .tl-pipe {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: tl-draw 1.2s ease-out forwards;
+  }
+  .tl-loop .tl-node-shadow {
+    fill: var(--color-ink);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .tl-loop[data-active='playbook'] [data-stage='playbook'] .tl-node-shadow,
+  .tl-loop[data-active='practice'] [data-stage='practice'] .tl-node-shadow,
+  .tl-loop[data-active='scorecard'] [data-stage='scorecard'] .tl-node-shadow,
+  .tl-loop[data-active='coach'] [data-stage='coach'] .tl-node-shadow,
+  .tl-loop[data-active='live'] [data-stage='live'] .tl-node-shadow {
+    opacity: 1;
+  }
+
+  /* feature accordion -------------------------------------------------------- */
+  .tl-acc {
+    transition:
+      box-shadow 0.2s,
+      transform 0.2s;
+  }
+  .tl-acc[aria-expanded='true'] {
+    box-shadow: -6px 6px 0 var(--color-ink);
+    transform: translate(4px, -2px);
+  }
+
+  /* guide thumbnails --------------------------------------------------------- */
+  .tl-stair {
+    transform-origin: bottom;
+    animation: tl-rise 1.4s ease-out both;
+  }
+  .tl-versus-bar {
+    animation: tl-width 3s ease-in-out infinite alternate;
+  }
+}
+
+@media (min-width: 640px) {
+  .tl-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 156px;
+    border-left: 1px dashed rgba(28, 27, 25, 0.16);
+  }
+  .tl-line .tl-stamp {
+    /* The list's 168px right padding is the stamp margin, outside each line's box. */
+    position: absolute;
+    right: -160px;
+    top: calc(50% - 15px);
+    margin-top: 0;
+  }
+}
+
+@keyframes tl-hl {
+  to {
+    background-size: 100% 100%;
+  }
+}
+@keyframes tl-print {
+  to {
+    clip-path: inset(-40px -220px -40px 0);
+  }
+}
+@keyframes tl-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.7) rotate(calc(var(--rot) * 2));
+  }
+  100% {
+    opacity: 0.92;
+    transform: scale(1) rotate(var(--rot));
+  }
+}
+@keyframes tl-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tl-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes tl-rise {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes tl-width {
+  from {
+    width: 18%;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-hl,
+  .tl-mark {
+    animation: none !important;
+    background-size: 100% 100%;
+  }
+  .tl-line {
+    animation: none !important;
+    clip-path: none;
+  }
+  .tl-stamp {
+    animation: none !important;
+    opacity: 0.92;
+  }
+  .tl-score {
+    animation: none !important;
+    opacity: 1;
+  }
+  .tl-pipe {
+    animation: none !important;
+    stroke-dashoffset: 0;
+  }
+  .tl-stair,
+  .tl-versus-bar,
+  .tl-btn,
+  .tl-acc {
+    animation: none !important;
+    transition: none !important;
+  }
+}

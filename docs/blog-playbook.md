@@ -43,25 +43,42 @@ animated figure kit. Copy the reference post's structure:
 | `page.tsx` | Server component: `PostShell`, `PostHeader`, hero figure, `Section`s, `FaqSection`, `CtaBlock`, `RelatedReading` |
 | `figures-*.tsx` | `'use client'` post-specific figures, each under 300 lines |
 
-Required in every post: a dark animated hero figure built in code (no images), the quick-answer
-callout, at least one `DataTable`, 4 to 6 animated figures, FAQ (same array as JSON-LD), a
-conclusion with a clear recommendation, `CtaBlock` with a post-specific headline, Related reading
-(up to four existing posts), and links to every source with `ExtLink`.
+Required in every post: an animated hero figure built in code (no images) drawn as an ink-bordered
+sheet on dotted paper with an offset shadow (see `PriceStaircaseHero`), the quick-answer callout,
+at least one `DataTable`, 4 to 6 animated figures, FAQ (same array as JSON-LD), a conclusion with
+a clear recommendation, `CtaBlock` with a post-specific headline, Related reading (up to four
+existing posts), and links to every source with `ExtLink`.
 Length: 1,800 to 2,800 words.
 
 ## Figure kit (`components/blog/figures/`)
 
 | Export | Use for |
 | --- | --- |
-| `Figure` | Frame: title says what to look at; caption says what is example vs data; source line |
+| `Figure` | Ink-bordered sheet: mono title says what to look at; caption says what is example vs data; source line |
 | `useInView` | Start motion when scrolled into view; reduced-motion users get the final state |
 | `AnimatedBars` | Benchmarks and comparisons; server-safe (named `format`: `usd`, `usd2`, `int`, `pct`) |
 | `StackedBar` | Cost or time broken into parts; pass `scaleMax` to compare two bars honestly |
 | `CountUp` | Numbers that count to their value and animate between slider results |
 | `Segmented`, `SliderField` | Toggles and inputs for interactive figures and calculators |
 
-CSS motion utilities in `app/globals.css`: `blog-fade-up`, `blog-float`, `blog-pulse-ring`,
-`blog-shimmer` (all disabled under reduced motion). Colors: `--blog-accent-*`, `--blog-ink`.
+Shared theme pieces in `app/lab.css`: `tl-btn` (tactile button), `tl-mono` (uppercase mono label),
+`tl-dots` (dotted paper), `tl-hl` (highlighter swipe). Motion in `app/globals.css`: `blog-fade-up`.
+Colours are Tailwind theme classes: `bg-paper`, `bg-sheet`, `border-ink`, `text-ink`, `text-ink-2`,
+`bg-sky`, `bg-sky-soft`, `bg-butter`, `bg-peach`, `bg-mint`, `text-stamp-green`, `text-stamp-red`,
+`text-signal`. Never hard-code hex values in figures.
+
+## Look: the practice lab
+
+The homepage and blog share one look (inspired by MotherDuck and Powerplant, Ajitesh, 18 Nov 2026).
+Figures must match it:
+- Paper background, square corners, 2 px ink borders on every box, flat pastel fills
+  (sky, butter, mint, peach). Mono uppercase for labels, numbers and figure titles.
+- A hard 5 to 8 px ink offset shadow marks the one thing that matters (the hero, the open item,
+  the winning option). Do not put it on everything.
+- Physical motion: bars grow, lines print in, a highlighter swipes, a stamp lands, a toggle presses.
+  Stamps: green for done or good (`text-stamp-green`), red for missing or weak (`text-stamp-red`).
+- Banned, because they read as generic AI: dark glow panels, gradient fills, blur blobs, shimmer,
+  waveforms, pulsing or blinking dots, glassmorphism, rounded cards.
 
 What makes a figure worth adding:
 - It explains one idea faster than a paragraph: a staircase of prices, an iceberg of hidden cost,
@@ -87,6 +104,7 @@ What makes a figure worth adding:
 
 - `docs/blog-roadmap.md`: topic queue and sister-site keyword list
 - `components/blog/figures/`: animated figure kit
+- `app/lab.css`: practice-lab buttons, labels, dotted paper, stamps and motion
 - `components/blog/post/`: post shell, header, callout, FAQ, CTA, related reading, prose helpers
 - `lib/blog-seo.ts`, `components/blog/post-json-ld.tsx`: metadata and JSON-LD
 - `lib/blog-posts.ts`, `app/sitemap.ts`: index and sitemap (sitemap reads the index)

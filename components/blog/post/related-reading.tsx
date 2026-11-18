@@ -14,14 +14,10 @@ export function RelatedReading({ slugs }: { slugs: string[] }) {
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
-          className="group rounded-xl border border-[var(--blog-border-default)] bg-white p-5 transition-shadow hover:shadow-md"
+          className="group border-2 border-ink bg-sheet p-5 transition-[transform,box-shadow] duration-200 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[6px_6px_0_var(--color-ink)] motion-reduce:transition-none"
         >
-          <p className="mb-1 text-xs font-medium text-[var(--blog-accent-blue)]">
-            {p.category}
-          </p>
-          <p className="font-semibold text-black transition-colors group-hover:text-[var(--blog-accent-blue)]">
-            {p.title}
-          </p>
+          <p className="tl-mono mb-1.5 text-[11px] font-semibold text-ink-2">{p.category}</p>
+          <p className="font-semibold text-ink group-hover:underline group-hover:underline-offset-4">{p.title}</p>
         </Link>
       ))}
     </div>

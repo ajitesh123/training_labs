@@ -5,7 +5,7 @@ import { CountUp } from './count-up'
 export type Segment = {
   label: string
   value: number
-  // Tailwind background class, e.g. 'bg-[var(--blog-accent-blue)]'.
+  // Tailwind background class, e.g. 'bg-sky' or 'bg-[var(--blog-accent-amber)]'.
   colorClass: string
 }
 
@@ -23,42 +23,29 @@ type StackedBarProps = {
  * One horizontal bar split into segments that grow when `start` turns true
  * and resize smoothly when values change. Legend values count up in step.
  */
-export function StackedBar({
-  segments,
-  start,
-  format,
-  scaleMax,
-  legendCols = 2,
-}: StackedBarProps) {
+export function StackedBar({ segments, start, format, scaleMax, legendCols = 2 }: StackedBarProps) {
   const total = segments.reduce((sum, s) => sum + s.value, 0)
   const scale = scaleMax ?? total
   return (
     <div>
-      <div className="flex h-5 w-full overflow-hidden rounded-full bg-white ring-1 ring-[var(--blog-border-default)]">
+      <div className="flex h-6 w-full overflow-hidden border-2 border-ink bg-paper">
         {segments.map((s) => (
           <div
             key={s.label}
-            className={`h-full transition-[width] duration-700 ease-out motion-reduce:transition-none ${s.colorClass}`}
+            className={`h-full border-r-2 border-ink transition-[width] duration-700 ease-out last:border-r-0 motion-reduce:transition-none ${s.colorClass}`}
             style={{ width: start && scale > 0 ? `${(s.value / scale) * 100}%` : '0%' }}
             title={`${s.label}: ${format(s.value)}`}
           />
         ))}
       </div>
-      <ul
-        className={`mt-3 grid grid-cols-1 gap-x-4 gap-y-1.5 text-xs ${legendCols === 2 ? 'sm:grid-cols-2' : ''}`}
-      >
+      <ul className={`mt-3 grid grid-cols-1 gap-x-4 gap-y-1.5 text-xs ${legendCols === 2 ? 'sm:grid-cols-2' : ''}`}>
         {segments.map((s) => (
           <li key={s.label} className="flex items-center justify-between gap-2">
-            <span className="flex items-center gap-2 text-[var(--blog-text-secondary)]">
-              <span className={`h-2.5 w-2.5 shrink-0 rounded-sm ${s.colorClass}`} />
+            <span className="flex items-center gap-2 text-ink-2">
+              <span className={`h-3 w-3 shrink-0 border-[1.5px] border-ink ${s.colorClass}`} />
               {s.label}
             </span>
-            <CountUp
-              value={s.value}
-              start={start}
-              format={format}
-              className="font-medium text-black"
-            />
+            <CountUp value={s.value} start={start} format={format} className="font-mono font-semibold text-ink" />
           </li>
         ))}
       </ul>
