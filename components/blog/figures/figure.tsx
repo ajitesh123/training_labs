@@ -13,34 +13,18 @@ type FigureProps = {
  * figure itself, then a caption and source line. Keep captions honest: say
  * when a number is an example input rather than published data.
  */
-export function Figure({
-  title,
-  children,
-  caption,
-  source,
-  tone = 'light',
-}: FigureProps) {
+export function Figure({ title, children, caption, source, tone = 'light' }: FigureProps) {
   const dark = tone === 'dark'
   return (
     <figure
-      className={`my-8 rounded-2xl border p-4 sm:p-6 ${
-        dark
-          ? 'border-white/10 bg-[var(--blog-ink)] text-white'
-          : 'border-[var(--blog-border-default)] bg-[var(--blog-background-secondary)]'
-      }`}
+      className={`my-8 border-2 border-ink p-4 sm:p-6 ${dark ? 'bg-ink text-sheet' : 'bg-sheet text-ink'}`}
     >
-      <p
-        className={`mb-4 text-sm font-semibold ${dark ? 'text-white' : 'text-black'}`}
-      >
+      <p className={`tl-mono mb-5 border-b-2 pb-3 text-[12px] font-semibold ${dark ? 'border-sheet/20' : 'border-ink'}`}>
         {title}
       </p>
       {children}
       {(caption || source) && (
-        <figcaption
-          className={`mt-4 space-y-1 text-xs leading-relaxed ${
-            dark ? 'text-white/60' : 'text-[var(--blog-text-muted)]'
-          }`}
-        >
+        <figcaption className={`mt-5 space-y-1 text-xs leading-relaxed ${dark ? 'text-sheet/60' : 'text-ink-2'}`}>
           {caption && <p>{caption}</p>}
           {source && <p>Source: {source}</p>}
         </figcaption>

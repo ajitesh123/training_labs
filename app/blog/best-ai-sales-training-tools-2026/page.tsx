@@ -67,15 +67,13 @@ export default function BestAiSalesTrainingToolsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white relative overflow-x-clip light">
-      <div className="spotlight" />
-      <div className="grid-pattern fixed inset-0 pointer-events-none" />
+    <div className="relative min-h-screen overflow-x-clip bg-paper text-ink">
 
       <BlogHeader />
 
-      <main className="pt-24 pb-16">
+      <main className="pb-16 pt-24 sm:pt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex gap-8">
+          <div className="flex gap-10">
             <TableOfContents sections={tocSections} />
 
             <article
@@ -87,18 +85,18 @@ export default function BestAiSalesTrainingToolsPage() {
             >
               <header className="mb-12">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-[var(--blog-accent-blue)]/10 text-[var(--blog-accent-blue)] text-sm font-medium">
+                  <span className="tl-mono border-2 border-ink bg-butter px-2 py-1 text-[11.5px] font-semibold text-ink">
                     Buyer&apos;s Guide
                   </span>
-                  <span className="text-[var(--blog-text-muted)] text-sm">
+                  <span className="tl-mono text-[11.5px] font-semibold text-ink-2">
                     July 31, 2026
                   </span>
-                  <span className="text-[var(--blog-text-muted)] text-sm">
+                  <span className="tl-mono text-[11.5px] font-semibold text-ink-2">
                     · 14 min read
                   </span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black mb-6">
+                <h1 className="mb-6 text-balance font-mono text-[30px] font-medium uppercase leading-[1.08] tracking-[-0.03em] text-ink sm:text-[40px] md:text-[44px]">
                   Best AI Sales Training Tools in 2026: A Buyer&apos;s Guide for
                   GTM Teams
                 </h1>
@@ -111,11 +109,9 @@ export default function BestAiSalesTrainingToolsPage() {
                 </p>
               </header>
 
-              <div className="relative aspect-[2/1] rounded-2xl overflow-hidden mb-12 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+              <div className="tl-dots relative mb-12 aspect-[2/1] overflow-hidden border-2 border-ink bg-sheet shadow-[7px_7px_0_var(--color-ink)]">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative p-8">
-                    <div className="absolute -top-12 -left-12 w-48 h-48 bg-[var(--blog-accent-blue)]/30 rounded-full blur-3xl" />
-                    <div className="absolute -bottom-12 -right-12 w-36 h-36 bg-sky-500/20 rounded-full blur-3xl" />
                     <div className="relative grid grid-cols-3 gap-3 text-center">
                       {[
                         'Roleplay',
@@ -127,7 +123,7 @@ export default function BestAiSalesTrainingToolsPage() {
                       ].map((label) => (
                         <div
                           key={label}
-                          className="px-3 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-medium"
+                          className="tl-mono border-2 border-ink bg-butter px-3 py-3 text-[11px] font-semibold text-ink even:bg-sky sm:text-xs"
                         >
                           {label}
                         </div>
@@ -137,8 +133,8 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </div>
 
-              <section id="introduction" className="mb-12 scroll-mt-24">
-                <h2 className="text-2xl font-bold text-black mb-4">
+              <section id="introduction" className="mb-14 scroll-mt-28">
+                <h2 className="mb-4 text-balance font-mono text-[22px] font-semibold uppercase leading-tight text-ink sm:text-[26px]">
                   Introduction
                 </h2>
                 <div className="text-lg text-[var(--blog-text-secondary)] space-y-4">
@@ -173,8 +169,8 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </section>
 
-              <section id="evaluation" className="mb-12 scroll-mt-24">
-                <h2 className="text-2xl font-bold text-black mb-4">
+              <section id="evaluation" className="mb-14 scroll-mt-28">
+                <h2 className="mb-4 text-balance font-mono text-[22px] font-semibold uppercase leading-tight text-ink sm:text-[26px]">
                   How We Evaluated
                 </h2>
                 <div className="text-lg text-[var(--blog-text-secondary)] space-y-4">
@@ -184,35 +180,35 @@ export default function BestAiSalesTrainingToolsPage() {
                   </p>
                   <ul className="list-disc list-inside space-y-2">
                     <li>
-                      <strong className="text-black">
+                      <strong className="text-ink">
                         Scenario composability
                       </strong>:{' '}
                       Can you build practice from real calls, docs, and ICP
                       context?
                     </li>
                     <li>
-                      <strong className="text-black">
+                      <strong className="text-ink">
                         Builder / MCP surface
                       </strong>:{' '}
                       Can GTM engineers automate scenario creation, scoring,
                       and analytics from Claude, Codex, or Cursor?
                     </li>
                     <li>
-                      <strong className="text-black">Practice fidelity</strong>:{' '}
+                      <strong className="text-ink">Practice fidelity</strong>:{' '}
                       Voice, video meetings, phone, slides. Does practice
                       resemble the channel where deals happen?
                     </li>
                     <li>
-                      <strong className="text-black">Multimodal feedback</strong>:{' '}
+                      <strong className="text-ink">Multimodal feedback</strong>:{' '}
                       Does coaching cover delivery (tone, pacing, presence),
                       not only transcript keywords?
                     </li>
                     <li>
-                      <strong className="text-black">Enablement fit</strong>:{' '}
+                      <strong className="text-ink">Enablement fit</strong>:{' '}
                       Rubrics, certifications, manager workflows, LMS needs.
                     </li>
                     <li>
-                      <strong className="text-black">
+                      <strong className="text-ink">
                         Pricing transparency
                       </strong>:{' '}
                       Can a mid-market team evaluate cost without a six-week
@@ -222,7 +218,7 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </section>
 
-              <section id="tough-tongue-ai" className="mb-12 scroll-mt-24">
+              <section id="tough-tongue-ai" className="mb-14 scroll-mt-28">
                 <ToolCard
                   name="Tough Tongue AI"
                   websiteUrl="https://www.toughtongueai.com"
@@ -258,8 +254,8 @@ export default function BestAiSalesTrainingToolsPage() {
                   verdict="Tough Tongue AI is the clear pick when your enablement motion is builder-led. MCP and skills mean a GTM engineer can pull lost-deal objections from Gong, spin a practice scenario, and ship it to reps without living in a vendor UI. Pair that with Meet, phone, and multimodal coaching, and practice finally looks like selling."
                 />
 
-                <div className="mt-6 p-6 rounded-xl bg-[var(--blog-accent-blue)]/5 border border-[var(--blog-accent-blue)]/20">
-                  <h4 className="font-bold text-black mb-3">
+                <div className="mt-6 border-2 border-ink bg-butter/40 p-6">
+                  <h4 className="font-bold text-ink mb-3">
                     Why MCP changes sales training
                   </h4>
                   <p className="text-[var(--blog-text-secondary)] text-sm leading-relaxed mb-3">
@@ -274,7 +270,7 @@ export default function BestAiSalesTrainingToolsPage() {
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--blog-accent-blue)]">→</span>
                       <span>
-                        <strong className="text-black">Compose:</strong> “Pull
+                        <strong className="text-ink">Compose:</strong> “Pull
                         the last three lost deals and build a pricing-objection
                         scenario.”
                       </span>
@@ -282,7 +278,7 @@ export default function BestAiSalesTrainingToolsPage() {
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--blog-accent-blue)]">→</span>
                       <span>
-                        <strong className="text-black">Analyze:</strong> Batch
+                        <strong className="text-ink">Analyze:</strong> Batch
                         session reviews and surface the top skill gaps for a
                         cohort.
                       </span>
@@ -290,7 +286,7 @@ export default function BestAiSalesTrainingToolsPage() {
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--blog-accent-blue)]">→</span>
                       <span>
-                        <strong className="text-black">Deploy:</strong> Practice
+                        <strong className="text-ink">Deploy:</strong> Practice
                         on the channels reps already use: Meet, phone, and
                         multimodal agents with slides.
                       </span>
@@ -299,7 +295,7 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </section>
 
-              <section id="hyperbound" className="mb-12 scroll-mt-24">
+              <section id="hyperbound" className="mb-14 scroll-mt-28">
                 <ToolCard
                   name="Hyperbound"
                   tagline="Well-funded conversational AI roleplay for enterprise sales orgs"
@@ -333,7 +329,7 @@ export default function BestAiSalesTrainingToolsPage() {
                 />
               </section>
 
-              <section id="second-nature" className="mb-12 scroll-mt-24">
+              <section id="second-nature" className="mb-14 scroll-mt-28">
                 <ToolCard
                   name="Second Nature"
                   tagline="Avatar-led pitch practice with LMS-friendly packaging"
@@ -367,7 +363,7 @@ export default function BestAiSalesTrainingToolsPage() {
                 />
               </section>
 
-              <section id="pitchmonster" className="mb-12 scroll-mt-24">
+              <section id="pitchmonster" className="mb-14 scroll-mt-28">
                 <ToolCard
                   name="PitchMonster"
                   tagline="AI roleplay with a Socratic coach, strong for compliance-conscious teams"
@@ -402,7 +398,7 @@ export default function BestAiSalesTrainingToolsPage() {
                 />
               </section>
 
-              <section id="yoodli" className="mb-12 scroll-mt-24">
+              <section id="yoodli" className="mb-14 scroll-mt-28">
                 <ToolCard
                   name="Yoodli"
                   tagline="Async video practice with AI feedback and peer coaching"
@@ -436,16 +432,16 @@ export default function BestAiSalesTrainingToolsPage() {
                 />
               </section>
 
-              <section id="comparison" className="mb-12 scroll-mt-24">
-                <h2 className="text-2xl font-bold text-black mb-6">
+              <section id="comparison" className="mb-14 scroll-mt-28">
+                <h2 className="mb-6 text-balance font-mono text-[22px] font-semibold uppercase leading-tight text-ink sm:text-[26px]">
                   Feature Comparison
                 </h2>
 
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto border-2 border-ink bg-sheet">
                   <table className="w-full border-collapse min-w-[720px]">
                     <thead>
-                      <tr className="bg-[var(--blog-background-secondary)]">
-                        <th className="p-4 text-left font-semibold text-black border border-[var(--blog-border-default)]">
+                      <tr className="bg-paper">
+                        <th className="tl-mono border border-ink/20 p-4 text-left text-[11px] font-semibold text-ink">
                           Feature
                         </th>
                         {[
@@ -457,7 +453,7 @@ export default function BestAiSalesTrainingToolsPage() {
                         ].map((name, i) => (
                           <th
                             key={name}
-                            className={`p-4 text-center font-semibold text-black border border-[var(--blog-border-default)] ${
+                            className={`p-4 text-center font-semibold text-ink border border-ink/20 ${
                               i === 0 ? 'bg-blue-50' : ''
                             }`}
                           >
@@ -468,14 +464,14 @@ export default function BestAiSalesTrainingToolsPage() {
                     </thead>
                     <tbody>
                       {comparisonRows.map((row) => (
-                        <tr key={row.feature} className="hover:bg-gray-50">
-                          <td className="p-4 text-[var(--blog-text-secondary)] border border-[var(--blog-border-default)] font-medium">
+                        <tr key={row.feature} className="hover:bg-butter/30">
+                          <td className="p-4 text-[var(--blog-text-secondary)] border border-ink/20 font-medium">
                             {row.feature}
                           </td>
                           {row.values.map((value, j) => (
                             <td
                               key={`${row.feature}-${j}`}
-                              className={`p-4 text-center border border-[var(--blog-border-default)] ${
+                              className={`p-4 text-center border border-ink/20 ${
                                 j === 0 ? 'bg-blue-50' : ''
                               }`}
                             >
@@ -494,13 +490,13 @@ export default function BestAiSalesTrainingToolsPage() {
                 </p>
               </section>
 
-              <section id="who-should-pick" className="mb-12 scroll-mt-24">
-                <h2 className="text-2xl font-bold text-black mb-4">
+              <section id="who-should-pick" className="mb-14 scroll-mt-28">
+                <h2 className="mb-4 text-balance font-mono text-[22px] font-semibold uppercase leading-tight text-ink sm:text-[26px]">
                   Who Should Pick What
                 </h2>
                 <div className="space-y-4 text-lg text-[var(--blog-text-secondary)]">
-                  <div className="p-5 rounded-xl border border-[var(--blog-border-default)] bg-white">
-                    <p className="font-semibold text-black mb-1">
+                  <div className="border-2 border-ink bg-sheet p-5">
+                    <p className="font-semibold text-ink mb-1">
                       GTM engineers / builder-led enablement
                     </p>
                     <p>
@@ -517,8 +513,8 @@ export default function BestAiSalesTrainingToolsPage() {
                       ship GTM systems.
                     </p>
                   </div>
-                  <div className="p-5 rounded-xl border border-[var(--blog-border-default)] bg-white">
-                    <p className="font-semibold text-black mb-1">
+                  <div className="border-2 border-ink bg-sheet p-5">
+                    <p className="font-semibold text-ink mb-1">
                       Enterprise sales orgs buying conversational roleplay
                     </p>
                     <p>
@@ -527,8 +523,8 @@ export default function BestAiSalesTrainingToolsPage() {
                       builder automation matter.
                     </p>
                   </div>
-                  <div className="p-5 rounded-xl border border-[var(--blog-border-default)] bg-white">
-                    <p className="font-semibold text-black mb-1">
+                  <div className="border-2 border-ink bg-sheet p-5">
+                    <p className="font-semibold text-ink mb-1">
                       Compliance / LMS-heavy enablement
                     </p>
                     <p>
@@ -538,8 +534,8 @@ export default function BestAiSalesTrainingToolsPage() {
                       enough.
                     </p>
                   </div>
-                  <div className="p-5 rounded-xl border border-[var(--blog-border-default)] bg-white">
-                    <p className="font-semibold text-black mb-1">
+                  <div className="border-2 border-ink bg-sheet p-5">
+                    <p className="font-semibold text-ink mb-1">
                       Async video + peer culture
                     </p>
                     <p>
@@ -551,8 +547,8 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </section>
 
-              <section id="conclusion" className="mb-12 scroll-mt-24">
-                <h2 className="text-2xl font-bold text-black mb-4">
+              <section id="conclusion" className="mb-14 scroll-mt-28">
+                <h2 className="mb-4 text-balance font-mono text-[22px] font-semibold uppercase leading-tight text-ink sm:text-[26px]">
                   Conclusion
                 </h2>
                 <div className="text-lg text-[var(--blog-text-secondary)] space-y-4">
@@ -561,8 +557,8 @@ export default function BestAiSalesTrainingToolsPage() {
                     best fit for how your team builds and runs practice.
                   </p>
 
-                  <div className="p-6 rounded-xl bg-[var(--blog-accent-blue)]/10 border border-[var(--blog-accent-blue)]/20">
-                    <h4 className="font-bold text-black mb-3">
+                  <div className="border-2 border-ink bg-sky-soft p-6 shadow-[5px_5px_0_var(--color-ink)]">
+                    <h4 className="font-bold text-ink mb-3">
                       Our top pick: Tough Tongue AI
                     </h4>
                     <p className="mb-3">
@@ -590,14 +586,12 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </section>
 
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-black text-center relative overflow-hidden mb-12">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--blog-accent-blue)]/20 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl" />
+              <div className="mb-12 border-2 border-ink bg-sky p-8 text-center shadow-[7px_7px_0_var(--color-ink)]">
                 <div className="relative">
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <h3 className="mb-3 text-balance font-mono text-[22px] font-semibold uppercase text-ink sm:text-[26px]">
                     Explore Tough Tongue AI
                   </h3>
-                  <p className="text-gray-400 mb-6 max-w-lg mx-auto">
+                  <p className="mx-auto mb-6 max-w-lg text-ink">
                     See how MCP-native, multimodal sales practice works for
                     builder-led GTM teams.
                   </p>
@@ -605,7 +599,7 @@ export default function BestAiSalesTrainingToolsPage() {
                     href="https://www.toughtongueai.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-black font-medium hover:bg-gray-100 transition-colors"
+                    className="tl-btn bg-butter"
                   >
                     Visit Tough Tongue AI
                     <svg
@@ -621,8 +615,8 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </div>
 
-              <section id="faq" className="mb-12 scroll-mt-24">
-                <h2 className="text-2xl font-bold text-black mb-6">FAQ</h2>
+              <section id="faq" className="mb-14 scroll-mt-28">
+                <h2 className="mb-6 text-balance font-mono text-[22px] font-semibold uppercase leading-tight text-ink sm:text-[26px]">FAQ</h2>
                 <div className="space-y-4">
                   {[
                     {
@@ -648,9 +642,9 @@ export default function BestAiSalesTrainingToolsPage() {
                   ].map((item) => (
                     <div
                       key={item.q}
-                      className="p-5 rounded-xl border border-[var(--blog-border-default)] bg-[var(--blog-background-secondary)]"
+                      className="border-2 border-dashed border-ink bg-paper p-5"
                     >
-                      <h3 className="font-semibold text-black mb-2">{item.q}</h3>
+                      <h3 className="font-semibold text-ink mb-2">{item.q}</h3>
                       <p className="text-[var(--blog-text-secondary)] text-sm leading-relaxed">
                         {item.a}
                       </p>
@@ -659,13 +653,13 @@ export default function BestAiSalesTrainingToolsPage() {
                 </div>
               </section>
 
-              <div className="pt-8 border-t border-[var(--blog-border-default)]">
+              <div className="border-t-2 border-ink pt-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--blog-accent-blue)] to-sky-600 flex items-center justify-center text-white font-bold">
+                  <div className="grid h-12 w-12 place-items-center border-2 border-ink bg-butter font-mono font-bold text-ink">
                     T
                   </div>
                   <div>
-                    <p className="font-semibold text-black">
+                    <p className="font-semibold text-ink">
                       Training Labs Editorial
                     </p>
                     <p className="text-sm text-[var(--blog-text-muted)]">

@@ -15,9 +15,9 @@ import { rates } from './content'
 const usd0 = (n: number) => `$${Math.round(n).toLocaleString('en-US')}`
 const usd2 = (n: number) => `$${n.toFixed(2)}`
 
-const MANAGER_COLOR = 'bg-[var(--blog-accent-amber)]'
-const REP_COLOR = 'bg-[var(--blog-accent-blue)]'
-const AI_COLOR = 'bg-[var(--blog-accent-cyan)]'
+const MANAGER_COLOR = 'bg-peach'
+const REP_COLOR = 'bg-sky'
+const AI_COLOR = 'bg-mint'
 
 // ------------------------------------------------------------------------------
 // cost of one practice repetition
@@ -75,14 +75,14 @@ export function PracticeRepCost() {
             <div key={r.title}>
               <div className="mb-2 flex items-baseline justify-between gap-3">
                 <div>
-                  <p className="text-sm font-semibold text-black">{r.title}</p>
+                  <p className="text-sm font-semibold text-ink">{r.title}</p>
                   <p className="text-xs text-[var(--blog-text-muted)]">{r.note}</p>
                 </div>
                 <CountUp
                   value={total(r.segments)}
                   start={inView}
                   format={usd2}
-                  className="text-2xl font-bold text-black"
+                  className="font-mono text-2xl font-bold text-ink"
                 />
               </div>
               <StackedBar segments={r.segments} start={inView} format={usd2} scaleMax={SCALE_MAX} />
@@ -127,12 +127,12 @@ function yearOne(i: Inputs): Segment[] {
     {
       label: 'Rep practice time',
       value: ((i.reps * i.minutes * 12) / 60) * i.repWage,
-      colorClass: 'bg-[var(--blog-accent-amber)]/50',
+      colorClass: 'bg-butter',
     },
     {
       label: 'Manager coaching time',
       value: i.reps * i.coaching * 12 * i.managerWage,
-      colorClass: 'bg-[var(--blog-accent-rose)]',
+      colorClass: 'bg-[var(--color-flame)]',
     },
   ]
 }
@@ -160,23 +160,23 @@ export function BudgetCalculator() {
           <SliderField label="Practice tool, per month" value={inputs.tool} min={0} max={1000} step={1} onChange={set('tool')} format={usd0} />
           <SliderField label="Practice minutes per rep, per month" value={inputs.minutes} min={0} max={240} step={10} onChange={set('minutes')} format={(n) => `${n} min`} />
           <SliderField label="Coaching hours per rep, per month" value={inputs.coaching} min={0} max={4} step={0.25} onChange={set('coaching')} format={(n) => `${n} h`} />
-          <details className="rounded-lg border border-[var(--blog-border-default)] bg-white p-3">
-            <summary className="cursor-pointer text-sm font-medium text-black">Wages</summary>
+          <details className="border-2 border-ink bg-sheet p-3">
+            <summary className="cursor-pointer text-sm font-medium text-ink">Wages</summary>
             <div className="mt-3 space-y-4">
               <SliderField label="Rep hourly wage" value={inputs.repWage} min={10} max={100} step={0.05} onChange={set('repWage')} format={usd2} hint="Default: BLS median, sales representatives of services" />
               <SliderField label="Manager hourly wage" value={inputs.managerWage} min={20} max={150} step={0.04} onChange={set('managerWage')} format={usd2} hint="Default: BLS median, sales managers" />
             </div>
           </details>
         </div>
-        <div className="rounded-xl bg-white p-5 ring-1 ring-[var(--blog-border-default)]">
+        <div className="border-2 border-ink bg-paper p-5">
           <p className="text-xs uppercase tracking-wider text-[var(--blog-text-muted)]">Year-one total</p>
-          <CountUp value={sum} start={inView} format={usd0} className="block text-4xl font-bold text-black" />
+          <CountUp value={sum} start={inView} format={usd0} className="block font-mono text-4xl font-bold text-ink" />
           <p className="mb-5 text-sm text-[var(--blog-text-secondary)]">
-            <CountUp value={inputs.reps > 0 ? sum / inputs.reps : 0} start={inView} format={usd0} className="font-semibold text-black" /> per rep
+            <CountUp value={inputs.reps > 0 ? sum / inputs.reps : 0} start={inView} format={usd0} className="font-semibold text-ink" /> per rep
           </p>
           <StackedBar segments={segments} start={inView} format={usd0} legendCols={1} />
-          <div className="mt-5 rounded-lg bg-[var(--blog-background-secondary)] p-3 text-sm text-[var(--blog-text-secondary)]">
-            <CountUp value={offShare} start={inView} format={(n) => `${Math.round(n)}%`} className="font-bold text-black" /> of this
+          <div className="mt-5 border-2 border-dashed border-ink bg-sheet p-3 text-sm text-ink-2">
+            <CountUp value={offShare} start={inView} format={(n) => `${Math.round(n)}%`} className="font-bold text-ink" /> of this
             plan’s cost is people’s time, which never shows up on an invoice.
           </div>
         </div>
