@@ -172,7 +172,7 @@ export function InvoiceIceberg() {
       <div ref={ref} className="relative overflow-hidden rounded-xl bg-white ring-1 ring-[var(--blog-border-default)]">
         <div className="relative flex h-28 items-end justify-center">
           <div
-            className={`blog-float absolute bottom-0 h-20 w-44 bg-gradient-to-b from-white to-sky-100 ring-1 ring-sky-200 transition-opacity duration-700 [clip-path:polygon(18%_100%,38%_18%,52%_0,66%_28%,84%_100%)] ${inView ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute bottom-0 h-24 w-60 bg-gradient-to-b from-sky-100 via-sky-200 to-sky-400 transition-opacity duration-700 [clip-path:polygon(14%_100%,34%_22%,50%_0,63%_30%,86%_100%)] ${inView ? 'opacity-100' : 'opacity-0'}`}
           />
           <div className="relative mb-3 rounded-lg bg-black px-3 py-1.5 text-center text-white shadow-lg">
             <p className="text-[10px] uppercase tracking-wider text-white/60">On the invoice</p>
@@ -185,10 +185,13 @@ export function InvoiceIceberg() {
           <div
             className={`absolute inset-x-0 top-0 h-1 origin-left bg-[var(--blog-accent-cyan)] transition-transform duration-1000 ${inView ? 'scale-x-100' : 'scale-x-0'}`}
           />
-          <p className="mb-3 text-center text-[10px] font-semibold uppercase tracking-wider text-sky-800/70">
+          <div
+            className={`absolute left-1/2 top-0 h-full w-[92%] -translate-x-1/2 bg-gradient-to-b from-sky-400/50 to-sky-600/30 transition-opacity delay-300 duration-1000 [clip-path:polygon(32%_0,68%_0,96%_38%,84%_100%,16%_100%,4%_42%)] ${inView ? 'opacity-100' : 'opacity-0'}`}
+          />
+          <p className="relative mb-3 text-center text-[10px] font-semibold uppercase tracking-wider text-sky-900/80">
             Below the waterline
           </p>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="relative grid gap-2 sm:grid-cols-2">
             {below.map((b, i) => (
               <div
                 key={b.label}

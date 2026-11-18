@@ -174,7 +174,7 @@ export function BudgetCalculator() {
           <p className="mb-5 text-sm text-[var(--blog-text-secondary)]">
             <CountUp value={inputs.reps > 0 ? sum / inputs.reps : 0} start={inView} format={usd0} className="font-semibold text-black" /> per rep
           </p>
-          <StackedBar segments={segments} start={inView} format={usd0} />
+          <StackedBar segments={segments} start={inView} format={usd0} legendCols={1} />
           <div className="mt-5 rounded-lg bg-[var(--blog-background-secondary)] p-3 text-sm text-[var(--blog-text-secondary)]">
             <CountUp value={offShare} start={inView} format={(n) => `${Math.round(n)}%`} className="font-bold text-black" /> of this
             plan’s cost is people’s time, which never shows up on an invoice.

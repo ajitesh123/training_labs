@@ -15,13 +15,21 @@ type StackedBarProps = {
   format: (n: number) => string
   // Shared scale, so two bars drawn side by side compare honestly.
   scaleMax?: number
+  // Use 1 inside narrow panels so long labels do not wrap.
+  legendCols?: 1 | 2
 }
 
 /**
  * One horizontal bar split into segments that grow when `start` turns true
  * and resize smoothly when values change. Legend values count up in step.
  */
-export function StackedBar({ segments, start, format, scaleMax }: StackedBarProps) {
+export function StackedBar({
+  segments,
+  start,
+  format,
+  scaleMax,
+  legendCols = 2,
+}: StackedBarProps) {
   const total = segments.reduce((sum, s) => sum + s.value, 0)
   const scale = scaleMax ?? total
   return (
@@ -36,7 +44,9 @@ export function StackedBar({ segments, start, format, scaleMax }: StackedBarProp
           />
         ))}
       </div>
-      <ul className="mt-3 grid grid-cols-1 gap-x-4 gap-y-1.5 text-xs sm:grid-cols-2">
+      <ul
+        className={`mt-3 grid grid-cols-1 gap-x-4 gap-y-1.5 text-xs ${legendCols === 2 ? 'sm:grid-cols-2' : ''}`}
+      >
         {segments.map((s) => (
           <li key={s.label} className="flex items-center justify-between gap-2">
             <span className="flex items-center gap-2 text-[var(--blog-text-secondary)]">
