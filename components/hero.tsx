@@ -1,6 +1,7 @@
 import { CallSheet } from '@/components/call-sheet'
 import { wrap } from '@/components/section-head'
-import { appUrl } from '@/lib/site'
+import Link from 'next/link'
+import { bookPath } from '@/lib/site'
 
 export default function Hero() {
   return (
@@ -18,9 +19,9 @@ export default function Hero() {
             handling, demos, negotiation, and coaching systems your team will actually use.
           </p>
           <div className="grid gap-3 sm:flex sm:flex-wrap sm:gap-3.5">
-            <a href={appUrl} className="tl-btn tl-btn-lg bg-sky">
+            <Link href={bookPath} className="tl-btn tl-btn-lg bg-sky">
               Start training today →
-            </a>
+            </Link>
             <a href="#courses" className="tl-btn tl-btn-lg">
               Explore courses
             </a>

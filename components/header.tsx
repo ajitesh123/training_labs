@@ -5,14 +5,14 @@ import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { wrap } from '@/components/section-head'
 import { blogPosts } from '@/lib/blog-posts'
-import { appUrl } from '@/lib/site'
+import { bookPath } from '@/lib/site'
 
 const NAV = [
-  { href: '#features', label: 'Features' },
-  { href: '#courses', label: 'Courses' },
-  { href: '#testimonials', label: 'Testimonials' },
+  { href: '/#features', label: 'Features' },
+  { href: '/#courses', label: 'Courses' },
+  { href: '/#testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Blog' },
-  { href: '#about', label: 'About' },
+  { href: '/#about', label: 'About' },
 ]
 
 // "Title? Subtitle" and "Title: subtitle" read better cut at the break.
@@ -53,12 +53,12 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <a href={appUrl} className="tl-mono hidden text-[13px] text-ink hover:underline md:inline">
+          <Link href={bookPath} className="tl-mono hidden text-[13px] text-ink hover:underline md:inline">
             Sign in
-          </a>
-          <a href={appUrl} className="tl-btn hidden bg-sky md:inline-flex">
+          </Link>
+          <Link href={bookPath} className="tl-btn hidden bg-sky md:inline-flex">
             Get started
-          </a>
+          </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="ml-auto grid h-9 w-10 place-items-center border-2 border-ink bg-sheet text-ink md:hidden"
@@ -78,8 +78,8 @@ export default function Header() {
               ))}
             </div>
             <div className="mt-5 grid grid-cols-2 gap-3">
-              <a href={appUrl} className="tl-btn">Sign in</a>
-              <a href={appUrl} className="tl-btn bg-sky">Get started</a>
+              <Link href={bookPath} className="tl-btn">Sign in</Link>
+              <Link href={bookPath} className="tl-btn bg-sky">Get started</Link>
             </div>
           </nav>
         )}

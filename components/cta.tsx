@@ -1,5 +1,6 @@
 import { wrap } from '@/components/section-head'
-import { appUrl, bookingUrl } from '@/lib/site'
+import Link from 'next/link'
+import { bookPath } from '@/lib/site'
 
 // A buyer objection and the reply worth practicing, drawn as speech bubbles.
 function Bubble({ text, fill, side }: { text: string; fill: string; side: 'left' | 'right' }) {
@@ -35,12 +36,12 @@ export default function CTA() {
           habits. Start with a free trial of any course.
         </p>
         <div className="grid gap-3 sm:flex sm:justify-center sm:gap-3.5">
-          <a href={appUrl} className="tl-btn tl-btn-lg bg-butter">
+          <Link href={bookPath} className="tl-btn tl-btn-lg bg-butter">
             Get started free →
-          </a>
-          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="tl-btn tl-btn-lg">
+          </Link>
+          <Link href={bookPath} className="tl-btn tl-btn-lg">
             Talk to enablement
-          </a>
+          </Link>
         </div>
         <p className="tl-mono mt-8 text-[11px] text-ink-2 sm:text-xs">
           ✓ No credit card required · ✓ Lifetime access · ✓ 30-day money-back guarantee

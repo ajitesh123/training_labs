@@ -1,4 +1,5 @@
-import { appUrl, bookingUrl } from '@/lib/site'
+import Link from 'next/link'
+import { appUrl, bookPath } from '@/lib/site'
 
 type CtaBlockProps = {
   headline: string
@@ -14,11 +15,11 @@ export function CtaBlock({ headline, body }: CtaBlockProps) {
       </h3>
       <p className="mb-7 max-w-xl text-ink">{body}</p>
       <div className="grid gap-3 sm:flex sm:gap-3.5">
-        <a href={appUrl} target="_blank" rel="noopener noreferrer" className="tl-btn bg-butter">
-          Try a free AI roleplay →
-        </a>
-        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="tl-btn">
-          Talk to the team
+        <Link href={bookPath} className="tl-btn bg-butter">
+          Book time with the founder →
+        </Link>
+        <a href={appUrl} target="_blank" rel="noopener noreferrer" className="tl-btn">
+          Try Tough Tongue AI free
         </a>
       </div>
     </div>
