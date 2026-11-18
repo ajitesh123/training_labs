@@ -46,8 +46,8 @@ Check both blog indexes each run; they publish daily.
 | # | Status | Working title | Primary keyword | Cluster | Evidence |
 | --- | --- | --- | --- | --- | --- |
 | 0 | done 2026-11-18 /blog/how-much-does-sales-training-cost | How Much Does Sales Training Cost in 2026? | sales training cost | Pricing | Calls: pricing 22; autocomplete |
-| 1 | todo | Per-Seat vs Per-Minute Pricing for AI Roleplay Training | ai roleplay pricing | Pricing | Calls: pricing 22, billing-unit objection 7 |
-| 2 | todo | Parent-Teacher Conference Role Play Scenarios (With Scripts) | parent teacher conference role play scenarios | Education | Autocomplete |
+| 1 | done 2026-11-19 /blog/ai-roleplay-pricing | Per-Seat vs Per-Minute Pricing for AI Roleplay Training | ai roleplay pricing | Pricing | Calls: pricing 22, billing-unit objection 7 |
+| 2 | done 2026-11-19 /blog/parent-teacher-conference-role-play-scenarios | Parent-Teacher Conference Role Play Scenarios (With Scripts) | parent teacher conference role play scenarios | Education | Autocomplete |
 | 3 | todo | Objection Handling Techniques You Can Actually Practice | objection handling techniques | Core sales | Autocomplete; calls: objections |
 | 4 | todo | Healthcare Sales Training: Programs, Skills and Costs | healthcare sales training | Healthcare | Autocomplete; calls: healthcare 4 |
 | 5 | todo | Sales Role Play Interview: Questions, Answers and How to Prepare | sales role play interview questions and answers | Core sales | Autocomplete |

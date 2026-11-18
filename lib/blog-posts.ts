@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'ai-roleplay-pricing',
+    title: 'AI Roleplay Pricing in 2026: Per Seat vs Per Minute, and Which One Costs Less',
+    excerpt:
+      'Seats, seats with a minute pool, minute blocks and sessions: what nine AI roleplay tools publish, the break-even between seats and minutes, and eight questions for any quote.',
+    category: 'Pricing Guide',
+    readTime: '11 min read',
+    date: 'November 19, 2026',
+    featured: false,
+  },
+  {
+    slug: 'parent-teacher-conference-role-play-scenarios',
+    title: 'Parent-Teacher Conference Role Play Scenarios, With Scripts and a Scoring Rubric',
+    excerpt:
+      'Ten conference scenarios from good news to separated parents who disagree, each with a parent brief and a hidden concern, plus scripts, a 20-minute format and a rubric.',
+    category: 'Scenario Guide',
+    readTime: '12 min read',
+    date: 'November 19, 2026',
+    featured: false,
+  },
+  {
     slug: 'how-much-does-sales-training-cost',
     title: 'How Much Does Sales Training Cost in 2026? Real Prices and the Costs Nobody Quotes',
     excerpt:
