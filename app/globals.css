@@ -194,16 +194,9 @@
 
 /* Blog design tokens, mapped onto the practice-lab palette */
 :root {
-  --blog-background-secondary: #f7f3ed;
   --blog-accent-blue: #1f6fe0;
   --blog-text-secondary: #55524c;
   --blog-text-muted: #8d8981;
-  --blog-border-default: #e6e0d6;
-  --blog-accent-cyan: #00a6ed;
-  --blog-accent-green: #10b981;
-  --blog-accent-amber: #f59e0b;
-  --blog-accent-rose: #f43f5e;
-  --blog-ink: #1c1b19;
 }
 
 /* Blog figure motion. Figures toggle these on scroll via useInView. */
@@ -218,83 +211,12 @@
   }
 }
 
-@keyframes blog-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes blog-pulse-ring {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
-}
-
-@keyframes blog-shimmer {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(250%);
-  }
-}
-
 .blog-fade-up {
   animation: blog-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.blog-float {
-  animation: blog-float 5s ease-in-out infinite;
-}
-
-.blog-pulse-ring {
-  animation: blog-pulse-ring 1.8s ease-out infinite;
-}
-
-.blog-shimmer {
-  animation: blog-shimmer 2.4s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .blog-fade-up,
-  .blog-float,
-  .blog-pulse-ring,
-  .blog-shimmer {
+  .blog-fade-up {
     animation: none;
   }
-}
-
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-.spotlight {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    ellipse 80% 50% at 50% -20%,
-    rgba(0, 112, 243, 0.05),
-    transparent
-  );
-  pointer-events: none;
-}
-
-.gradient-text-blue {
-  background: linear-gradient(135deg, #0070f3 0%, #00a6ed 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
