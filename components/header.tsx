@@ -1,84 +1,89 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { wrap } from '@/components/section-head'
+import { blogPosts } from '@/lib/blog-posts'
+import { appUrl } from '@/lib/site'
+
+const NAV = [
+  { href: '#features', label: 'Features' },
+  { href: '#courses', label: 'Courses' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '/blog', label: 'Blog' },
+  { href: '#about', label: 'About' },
+]
+
+// "Title? Subtitle" and "Title: subtitle" read better cut at the break.
+function shortTitle(title: string): string {
+  const q = title.indexOf('?')
+  if (q > 0) return title.slice(0, q + 1)
+  const c = title.indexOf(':')
+  return c > 0 ? title.slice(0, c) : title
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const latest = blogPosts[0]
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">T</span>
-            </div>
-            <span className="font-bold text-xl hidden sm:inline">Training Labs</span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition">
-              Features
-            </Link>
-            <Link href="#courses" className="text-sm text-muted-foreground hover:text-foreground transition">
-              Courses
-            </Link>
-            <Link href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition">
-              Testimonials
-            </Link>
-            <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition">
-              Blog
-            </Link>
-            <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition">
-              About
-            </Link>
+    <>
+      {latest && (
+        <Link
+          href={`/blog/${latest.slug}`}
+          className="tl-mono block border-b-2 border-ink bg-butter px-4 py-2 text-center text-[11px] font-medium text-ink sm:text-[12.5px]"
+        >
+          New guide: {shortTitle(latest.title)}
+          <span className="ml-2.5 underline underline-offset-4">Read it →</span>
+        </Link>
+      )}
+      <header className="sticky top-0 z-50 border-b-2 border-ink bg-paper">
+        <div className={`${wrap} flex h-[62px] items-center gap-9 sm:h-[72px]`}>
+          <Link href="/" className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-ink">
+            <span className="grid h-[34px] w-[34px] place-items-center border-2 border-ink bg-butter font-mono text-[15px] font-bold shadow-[3px_3px_0_var(--color-ink)]">
+              T
+            </span>
+            Training Labs
+          </Link>
+          <nav className="tl-mono mr-auto hidden items-center gap-7 text-[13px] text-ink md:flex">
+            {NAV.map((item) => (
+              <Link key={item.label} href={item.href} className="hover:underline hover:underline-offset-4">
+                {item.label}
+              </Link>
+            ))}
           </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline">Sign In</Button>
-            <Button>Get Started</Button>
-          </div>
-
-          {/* Mobile Menu Toggle */}
+          <a href={appUrl} className="tl-mono hidden text-[13px] text-ink hover:underline md:inline">
+            Sign in
+          </a>
+          <a href={appUrl} className="tl-btn hidden bg-sky md:inline-flex">
+            Get started
+          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2"
+            className="ml-auto grid h-9 w-10 place-items-center border-2 border-ink bg-sheet text-ink md:hidden"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="md:hidden border-t border-border py-4 space-y-3 pb-4">
-            <Link href="#features" className="block text-sm text-muted-foreground hover:text-foreground transition">
-              Features
-            </Link>
-            <Link href="#courses" className="block text-sm text-muted-foreground hover:text-foreground transition">
-              Courses
-            </Link>
-            <Link href="#testimonials" className="block text-sm text-muted-foreground hover:text-foreground transition">
-              Testimonials
-            </Link>
-            <Link href="/blog" className="block text-sm text-muted-foreground hover:text-foreground transition">
-              Blog
-            </Link>
-            <Link href="#about" className="block text-sm text-muted-foreground hover:text-foreground transition">
-              About
-            </Link>
-            <div className="flex gap-2 pt-4">
-              <Button variant="outline" className="flex-1">Sign In</Button>
-              <Button className="flex-1">Get Started</Button>
+          <nav className="tl-mono border-t-2 border-ink bg-paper px-5 py-4 text-sm text-ink md:hidden">
+            <div className="grid gap-3">
+              {NAV.map((item) => (
+                <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-5 grid grid-cols-2 gap-3">
+              <a href={appUrl} className="tl-btn">Sign in</a>
+              <a href={appUrl} className="tl-btn bg-sky">Get started</a>
             </div>
           </nav>
         )}
-      </div>
-    </header>
+      </header>
+    </>
   )
 }

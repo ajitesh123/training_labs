@@ -2,13 +2,13 @@ import { Briefcase, Mail, MessageSquare, Users } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-white">
+    <footer className="bg-ink text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-b border-white/10">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="font-bold text-lg">T</span>
+              <div className="w-8 h-8 border-2 border-white bg-butter text-ink flex items-center justify-center">
+                <span className="font-mono font-bold text-base">T</span>
               </div>
               <span className="font-bold text-lg">Training Labs</span>
             </div>
@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Courses</h3>
+            <h3 className="tl-mono text-xs font-semibold">Courses</h3>
             <ul className="space-y-2 text-sm text-white/70">
               <li>
                 <a href="#courses" className="hover:text-white transition">
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Company</h3>
+            <h3 className="tl-mono text-xs font-semibold">Company</h3>
             <ul className="space-y-2 text-sm text-white/70">
               <li>
                 <a href="#about" className="hover:text-white transition">
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Legal</h3>
+            <h3 className="tl-mono text-xs font-semibold">Legal</h3>
             <ul className="space-y-2 text-sm text-white/70">
               <li>
                 <a href="#" className="hover:text-white transition">

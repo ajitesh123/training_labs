@@ -1,86 +1,96 @@
-import {
-  BookOpen,
-  Users,
-  Zap,
-  Award,
-  MessageSquare,
-  LineChart,
-} from 'lucide-react'
+'use client'
 
-const features = [
+import { useEffect, useState } from 'react'
+import { type LoopStage, PracticeLoop } from '@/components/practice-loop'
+import { SectionHead, SectionLede, wrap } from '@/components/section-head'
+
+const features: { title: string; description: string; stage: LoopStage }[] = [
   {
-    icon: MessageSquare,
     title: 'Live Roleplay Practice',
     description:
       'Rehearse discovery calls, demos, and negotiations with structured scenarios that mirror real buyer conversations.',
+    stage: 'practice',
   },
   {
-    icon: BookOpen,
     title: 'Playbook-Ready Curriculum',
     description:
-      'Courses built around modern GTM motions — outbound, inbound, expansion, and enterprise selling.',
+      'Courses built around modern GTM motions: outbound, inbound, expansion, and enterprise selling.',
+    stage: 'playbook',
   },
   {
-    icon: Users,
     title: 'Manager Coaching Tracks',
     description:
       'Train frontline managers to run 1:1s, deal reviews, and call coaching that actually stick.',
+    stage: 'coach',
   },
   {
-    icon: LineChart,
     title: 'Skills That Move Pipeline',
     description:
       'Focus on behaviors that show up in win rates: qualification, storytelling, objection handling, and closing.',
+    stage: 'live',
   },
   {
-    icon: Award,
     title: 'Certifications',
     description:
       'Earn credentials for ramp completion and methodology mastery your enablement team can standardize on.',
+    stage: 'scorecard',
   },
   {
-    icon: Zap,
     title: 'Flexible Learning',
     description:
-      'Self-paced modules with lifetime access — so new hires and veterans can train around live selling.',
+      'Self-paced modules with lifetime access, so new hires and veterans can train around live selling.',
+    stage: 'practice',
   },
 ]
 
-export default function Features() {
-  return (
-    <section id="features" className="py-20 md:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why Choose Training Labs?
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Sales training and coaching programs designed for revenue teams —
-            practical, methodology-aligned, and built for real selling situations.
-          </p>
-        </div>
+const AUTO_ADVANCE_MS = 4200
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => {
-            const Icon = feature.icon
-            return (
-              <div
+export default function Features() {
+  const [open, setOpen] = useState(0)
+  const [touched, setTouched] = useState(false)
+
+  // Walk through the features until the visitor picks one themselves.
+  useEffect(() => {
+    if (touched || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const id = window.setInterval(() => setOpen((i) => (i + 1) % features.length), AUTO_ADVANCE_MS)
+    return () => window.clearInterval(id)
+  }, [touched])
+
+  return (
+    <section id="features" className="scroll-mt-20 border-b-2 border-ink py-14 sm:py-24">
+      <div className={wrap}>
+        <SectionHead
+          kicker="Features"
+          title="Why Choose Training Labs?"
+          aside={
+            <SectionLede>
+              Sales training and coaching programs designed for revenue teams: practical,
+              methodology-aligned, and built for real selling situations.
+            </SectionLede>
+          }
+        />
+        <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+          <div className="grid gap-3">
+            {features.map((feature, i) => (
+              <button
                 key={feature.title}
-                className="group bg-white rounded-lg border border-border p-8 hover:border-primary hover:shadow-lg transition"
+                type="button"
+                aria-expanded={open === i}
+                onClick={() => {
+                  setTouched(true)
+                  setOpen(i)
+                }}
+                className="tl-acc block w-full cursor-pointer border-2 border-ink bg-sheet px-4 py-4 text-left text-ink sm:px-5"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                  <Icon
-                    size={24}
-                    className="text-primary group-hover:text-white transition"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <span className="tl-mono flex justify-between gap-3 text-[13px] font-semibold sm:text-sm">
                   {feature.title}
-                </h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </div>
-            )
-          })}
+                  <span aria-hidden>{open === i ? '−' : '+'}</span>
+                </span>
+                {open === i && <span className="mt-3 block text-[15px] text-ink-2">{feature.description}</span>}
+              </button>
+            ))}
+          </div>
+          <PracticeLoop active={features[open].stage} />
         </div>
       </div>
     </section>
