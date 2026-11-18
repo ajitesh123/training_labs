@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 
 const title =
   'Best AI Sales Training Tools in 2026: A Buyer’s Guide for GTM Teams'
@@ -6,7 +7,6 @@ const description =
   'Compare Tough Tongue AI, Hyperbound, Second Nature, PitchMonster, and Yoodli on MCP, multimodal practice, builder workflows, and enablement fit for GTM engineers and sales leaders.'
 const slug = 'best-ai-sales-training-tools-2026'
 const publishedDate = '2026-07-31'
-const siteUrl = 'https://traininglabs.ai'
 
 export const metadata: Metadata = {
   title,

@@ -1,12 +1,11 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-posts'
-
-const siteUrl = 'https://traininglabs.ai'
+import { siteUrl } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = blogPosts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: new Date('2026-07-31'),
+    lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
