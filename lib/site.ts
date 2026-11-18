@@ -3,7 +3,12 @@ export const siteUrl = 'https://www.traininglabsai.com'
 
 export const siteName = 'Training Labs'
 
-// Where practice happens (free AI roleplay) and where people book a call.
-export const appUrl = 'https://app.toughtongueai.com'
+// Every site CTA goes to the on-site booking page. Training Labs does not send
+// homepage traffic to the Tough Tongue AI app; blog posts may, with a disclosure.
+export const bookPath = '/book'
 
-export const bookingUrl = 'https://cal.com/ajitesh/30min'
+export const calLink = 'ajitesh/30min'
+
+export const bookingUrl = `https://cal.com/${calLink}`
+
+export const appUrl = 'https://app.toughtongueai.com'

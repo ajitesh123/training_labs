@@ -1,5 +1,6 @@
 import { SectionHead, SectionLede, wrap } from '@/components/section-head'
-import { bookingUrl } from '@/lib/site'
+import Link from 'next/link'
+import { bookPath } from '@/lib/site'
 
 type Level = 'Beginner' | 'Intermediate' | 'Advanced'
 
@@ -114,9 +115,9 @@ export default function Courses() {
               </div>
               <div className="flex items-center justify-between border-t-2 border-ink px-4 py-3">
                 <span className="font-mono text-[26px] font-semibold leading-none tracking-tight text-ink">{course.price}</span>
-                <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="tl-btn tl-btn-sm">
+                <Link href={bookPath} className="tl-btn tl-btn-sm">
                   Enroll now
-                </a>
+                </Link>
               </div>
             </article>
           ))}
