@@ -5,7 +5,7 @@ import { CountUp } from './count-up'
 export type Segment = {
   label: string
   value: number
-  // Tailwind background class, e.g. 'bg-sky' or 'bg-[var(--blog-accent-amber)]'.
+  // Tailwind background class, e.g. 'bg-sky' or 'bg-butter'.
   colorClass: string
 }
 
