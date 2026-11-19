@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'objection-handling-techniques',
+    title: 'Objection Handling Techniques You Can Actually Practice, With Drills for Each One',
+    excerpt:
+      'Seven techniques with a weak reply, a strong reply and a drill for each, Gong data on the objections reps hear most, an objection matrix and a four-week practice plan.',
+    category: 'Skills Guide',
+    readTime: '11 min read',
+    date: 'November 19, 2026',
+    featured: false,
+  },
+  {
+    slug: 'healthcare-sales-training',
+    title: 'Healthcare Sales Training in 2026: Programs, Costs and the Skills That Close Deals',
+    excerpt:
+      'Published prices for medical sales programs from $499 to $19,495, what team programs cover, the PhRMA and AdvaMed codes, hospital value analysis, and six scenarios to practice.',
+    category: 'Industry Guide',
+    readTime: '12 min read',
+    date: 'November 19, 2026',
+    featured: false,
+  },
+  {
     slug: 'ai-roleplay-pricing',
     title: 'AI Roleplay Pricing in 2026: Per Seat vs Per Minute, and Which One Costs Less',
     excerpt:
