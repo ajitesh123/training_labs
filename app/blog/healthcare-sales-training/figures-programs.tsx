@@ -26,7 +26,7 @@ export function SkillStackHero() {
       className="tl-dots relative mb-12 border-2 border-ink bg-sheet px-3 pb-5 pt-5 shadow-[7px_7px_0_var(--color-ink)] sm:px-7"
     >
       <p className="tl-mono mb-5 text-[11.5px] font-semibold text-ink-2">[ What healthcare sales training has to cover ]</p>
-      <div className="grid gap-4 sm:grid-cols-[1fr_170px] sm:gap-5">
+      <div className="grid gap-5 sm:grid-cols-[1fr_236px] sm:gap-4">
         <ol className="flex flex-col-reverse gap-2">
           {LAYERS.map((l, i) => (
             <li
@@ -46,7 +46,7 @@ export function SkillStackHero() {
             </li>
           ))}
         </ol>
-        <div className="flex flex-col gap-4 sm:justify-between sm:py-6">
+        <div className="flex flex-col gap-5 px-1.5 pb-1 sm:justify-between sm:px-0 sm:py-6">
           <span
             className="tl-stamp tl-stamp-1 self-start text-stamp-green"
             style={inView ? { animation: STAMP_IN, animationDelay: `${stampAt}ms` } : undefined}

@@ -58,7 +58,7 @@ export function ObjectionMatrix() {
                   aria-pressed={active === i}
                   aria-label={`${m.label}: heard ${m.heard} times per 10 calls, ${m.lost}% of those calls ended there`}
                   className={`absolute grid h-7 w-7 -translate-x-1/2 translate-y-1/2 cursor-pointer place-items-center border-2 border-ink font-mono text-[11px] font-bold text-ink transition-[background-color,box-shadow] sm:h-8 sm:w-8 ${
-                    active === i ? 'bg-ink text-sheet shadow-[3px_3px_0_var(--color-flame)]' : 'bg-sheet hover:bg-sky-soft'
+                    active === i ? 'bg-butter shadow-[3px_3px_0_var(--color-ink)]' : 'bg-sheet hover:bg-sky-soft'
                   } ${inView ? 'blog-fade-up' : 'opacity-0'}`}
                   style={{ left: `${(m.heard / X_MAX) * 100}%`, bottom: `${m.lost}%`, animationDelay: `${300 + i * 110}ms` }}
                 >
@@ -126,7 +126,7 @@ export function DrillPlan() {
 
   return (
     <Figure
-      title="Four weeks of drills: what ten minutes a day adds up to"
+      title="Four weeks of drills: what a few minutes a day adds up to"
       caption={`Example plan. One repetition is about ${REP_MINUTES} minutes: the objection, your reply, a quick self-score. “Per objection” spreads the month across your top ${TOP_OBJECTIONS} objections. Each week keeps the same objections and raises the difficulty.`}
     >
       <div ref={ref}>
@@ -157,6 +157,7 @@ export function DrillPlan() {
             />
           </div>
         </div>
+        <p className="tl-mono mb-2 text-right text-[10px] text-ink-2">Bar height: difficulty · number: reps</p>
         <div className="flex h-52 items-end gap-2 border-b-2 border-ink sm:gap-3">
           {WEEKS.map((w, i) => (
             <div key={w.n} className="flex h-full flex-1 flex-col justify-end">

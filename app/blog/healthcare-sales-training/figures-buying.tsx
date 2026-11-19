@@ -50,6 +50,7 @@ const STAMP: Record<Verdict, { label: string; tone: string }> = {
 }
 
 export function CodeCheck() {
+  const { ref, inView } = useInView<HTMLDivElement>()
   const [open, setOpen] = useState<Set<number>>(new Set())
   const reveal = (i: number) => setOpen((prev) => new Set(prev).add(i))
   const all = open.size === CASES.length
@@ -73,7 +74,7 @@ export function CodeCheck() {
           Check all
         </button>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div ref={ref} className="grid gap-3 sm:grid-cols-2">
         {CASES.map((c, i) => {
           const shown = open.has(i)
           const s = STAMP[c.verdict]
@@ -85,7 +86,8 @@ export function CodeCheck() {
               aria-expanded={shown}
               className={`flex cursor-pointer flex-col items-start gap-2 border-2 border-ink p-3.5 text-left transition-colors ${
                 shown ? 'bg-paper' : 'bg-sheet hover:bg-butter'
-              }`}
+              } ${inView ? 'blog-fade-up' : 'opacity-0'}`}
+              style={{ animationDelay: `${i * 90}ms` }}
             >
               <p className="text-[14.5px] font-semibold leading-snug text-ink">{c.act}</p>
               {shown ? (
