@@ -204,9 +204,9 @@ export default function SalesRolePlayInterviewPage() {
 
       <Section id="scorecard" title="Same buyer, two candidates: how the score adds up">
         <p>
-          Here is how the scorecard looks when two candidates meet the buyer from the hidden brief
-          above. Most interviewers will score something like this, often with a line of evidence
-          next to each mark.
+          Here is a scorecard built from the four guides above, with two candidates meeting the
+          buyer from the hidden brief. Kulissa’s version asks for a line of evidence next to each
+          mark, so this one has them too.
         </p>
         <ScorecardCompare />
         <p>

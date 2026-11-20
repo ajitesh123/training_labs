@@ -252,7 +252,7 @@ export function RefusalBranch() {
               <p className="tl-mono mb-1 text-[10px] font-semibold text-ink-2">
                 Classmates watching: <span className="text-ink">{watching}</span>/{CLASS_SIZE}
               </p>
-              <div className="grid grid-cols-8 gap-1">
+              <div className="grid max-w-[220px] grid-cols-8 gap-1">
                 {Array.from({ length: CLASS_SIZE }, (_, i) => (
                   <span
                     key={i}

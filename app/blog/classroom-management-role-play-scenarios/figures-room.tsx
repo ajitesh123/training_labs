@@ -8,7 +8,7 @@ const STAMP_IN = 'tl-stamp 0.32s cubic-bezier(0.3, 1.6, 0.6, 1) forwards'
 // ------------------------------------------------------------------------------
 // hero: a quiet redirect, seen from above
 // ------------------------------------------------------------------------------
-// Five columns, three rows. Positions are percent of the room box (16:10).
+// Five columns, three rows. Positions are percent of the room box (4:3 on phones, 16:10 above).
 const COLS = 5
 const ROWS = 3
 const deskLeft = (c: number) => 4 + c * 19.5
@@ -33,7 +33,7 @@ export function QuietRedirectHero() {
         <p className="tl-mono text-[10.5px] text-ink-2">Run 3 of 3</p>
       </div>
 
-      <div className="relative aspect-[16/10] w-full border-2 border-ink bg-paper">
+      <div className="relative aspect-[4/3] w-full border-2 border-ink bg-paper sm:aspect-[16/10]">
         <div className="tl-mono absolute inset-x-[18%] top-[5%] border-2 border-ink bg-sheet py-1 text-center text-[9px] font-semibold text-ink-2 sm:text-[11px]">
           Board · fractions, lesson 4
         </div>
@@ -50,13 +50,13 @@ export function QuietRedirectHero() {
                   <span className={`absolute inset-0 bg-peach transition-opacity duration-300 motion-reduce:transition-none ${inView ? 'opacity-100' : 'opacity-0'}`} style={at(T.flag)} />
                   <span className={`absolute inset-0 bg-mint transition-opacity duration-500 motion-reduce:transition-none ${inView ? 'opacity-100' : 'opacity-0'}`} style={at(T.settle)} />
                   <span
-                    className={`tl-mono absolute -top-[70%] left-1/2 -translate-x-1/2 whitespace-nowrap border-[1.5px] border-ink bg-peach px-1 text-[8px] font-semibold text-ink transition-opacity duration-300 sm:text-[10px] ${inView ? 'opacity-100' : 'opacity-0'}`}
+                    className={`tl-mono absolute -top-[70%] left-1/2 min-w-[3.4rem] -translate-x-1/2 whitespace-nowrap border-[1.5px] border-ink bg-peach px-1 text-center sm:min-w-[4.4rem] text-[8px] font-semibold text-ink transition-opacity duration-300 sm:text-[10px] ${inView ? 'opacity-100' : 'opacity-0'}`}
                     style={at(T.flag)}
                   >
                     Phone out
                   </span>
                   <span
-                    className={`tl-mono absolute -top-[70%] left-1/2 -translate-x-1/2 whitespace-nowrap border-[1.5px] border-ink bg-mint px-1 text-[8px] font-semibold text-ink transition-opacity duration-300 sm:text-[10px] ${inView ? 'opacity-100' : 'opacity-0'}`}
+                    className={`tl-mono absolute -top-[70%] left-1/2 min-w-[3.4rem] -translate-x-1/2 whitespace-nowrap border-[1.5px] border-ink bg-mint px-1 text-center sm:min-w-[4.4rem] text-[8px] font-semibold text-ink transition-opacity duration-300 sm:text-[10px] ${inView ? 'opacity-100' : 'opacity-0'}`}
                     style={at(T.settle)}
                   >
                     Put away

@@ -130,7 +130,7 @@ export function RubricRuns() {
                     {shown && (
                       <span
                         key={`${run}-${r}`}
-                        className={`font-mono text-[15px] font-bold ${rr.marks[e] ? 'text-stamp-green' : 'text-stamp-red'} ${r === idx ? 'opacity-0' : 'opacity-60'}`}
+                        className={`font-mono text-[19px] font-bold leading-none ${rr.marks[e] ? 'text-stamp-green' : 'text-stamp-red'} ${r === idx ? 'opacity-0' : 'opacity-60'}`}
                         style={r === idx ? { animation: `${STAMP_IN} ${0.1 + e * 0.12}s` } : undefined}
                       >
                         {rr.marks[e] ? '✓' : '✗'}

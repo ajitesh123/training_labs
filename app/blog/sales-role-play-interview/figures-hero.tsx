@@ -79,10 +79,12 @@ export function InterviewClockHero() {
 
       <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 sm:grid-cols-3">
         {PHASES.map((p) => (
-          <li key={p.label} className="flex items-center gap-2 text-[12px] text-ink-2">
-            <span className={`h-3 w-3 shrink-0 border-[1.5px] border-ink ${p.fill}`} />
-            <span className="font-semibold text-ink">{p.label}</span>
-            <span className="tl-mono text-[9.5px]">{p.range}</span>
+          <li key={p.label} className="flex items-start gap-2 text-[12px] text-ink-2">
+            <span className={`mt-0.5 h-3 w-3 shrink-0 border-[1.5px] border-ink ${p.fill}`} />
+            <span className="flex flex-col leading-tight sm:flex-row sm:items-baseline sm:gap-2">
+              <span className="whitespace-nowrap font-semibold text-ink">{p.label}</span>
+              <span className="tl-mono whitespace-nowrap text-[9.5px]">{p.range}</span>
+            </span>
           </li>
         ))}
       </ul>
