@@ -248,7 +248,7 @@ export default function ObjectionHandlingPage() {
 
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
-        <RelatedReading slugs={['how-much-does-sales-training-cost', 'ai-roleplay-pricing', 'best-ai-sales-training-tools-2026']} />
+        <RelatedReading slugs={['how-much-does-sales-training-cost', 'ai-roleplay-pricing', 'best-ai-sales-training-tools-2026', 'sales-role-play-interview']} />
       </section>
     </PostShell>
   )

@@ -50,8 +50,8 @@ Check both blog indexes each run; they publish daily.
 | 2 | done 2026-11-19 /blog/parent-teacher-conference-role-play-scenarios | Parent-Teacher Conference Role Play Scenarios (With Scripts) | parent teacher conference role play scenarios | Education | Autocomplete |
 | 3 | done 2026-11-19 /blog/objection-handling-techniques | Objection Handling Techniques You Can Actually Practice | objection handling techniques | Core sales | Autocomplete; calls: objections |
 | 4 | done 2026-11-19 /blog/healthcare-sales-training | Healthcare Sales Training: Programs, Skills and Costs | healthcare sales training | Healthcare | Autocomplete; calls: healthcare 4 |
-| 5 | todo | Sales Role Play Interview: Questions, Answers and How to Prepare | sales role play interview questions and answers | Core sales | Autocomplete |
-| 6 | todo | Classroom Management Role Play Scenarios for Teacher Training | classroom management role play scenarios | Education | Autocomplete |
+| 5 | done 2026-11-20 /blog/sales-role-play-interview | Sales Role Play Interview: Questions, Answers and How to Prepare | sales role play interview questions and answers | Core sales | Autocomplete |
+| 6 | done 2026-11-20 /blog/classroom-management-role-play-scenarios | Classroom Management Role Play Scenarios for Teacher Training | classroom management role play scenarios | Education | Autocomplete |
 | 7 | todo | A Sales Coaching Framework Managers Will Use Every Week | sales coaching framework | Core coaching | Autocomplete |
 | 8 | todo | Patient Communication Training: What Works and How to Practice | patient communication training | Healthcare | Autocomplete |
 | 9 | skipped (sister site: https://www.snapsdr.com/blog/discovery-call-questions) | Discovery Call Questions, With Drills for Each Stage | discovery call questions | Core sales | Autocomplete |

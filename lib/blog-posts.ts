@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'sales-role-play-interview',
+    title: 'Sales Role Play Interview: Questions, Answers and How to Prepare',
+    excerpt:
+      'Eight role play prompts with a weak and a strong reply, what interviewers score and hide, the questions asked before and after, and a 48-hour plan to rehearse out loud.',
+    category: 'Interview Guide',
+    readTime: '11 min read',
+    date: 'November 20, 2026',
+    featured: false,
+  },
+  {
+    slug: 'classroom-management-role-play-scenarios',
+    title: 'Classroom Management Role Play Scenarios for Teacher Training, With Scripts',
+    excerpt:
+      'Ten scenarios from calling out to a student who swears, each with a student brief and a hidden reason, a least-intrusive first move, a script, a 12-minute format and a rubric.',
+    category: 'Scenario Guide',
+    readTime: '12 min read',
+    date: 'November 20, 2026',
+    featured: false,
+  },
+  {
     slug: 'objection-handling-techniques',
     title: 'Objection Handling Techniques You Can Actually Practice, With Drills for Each One',
     excerpt:
