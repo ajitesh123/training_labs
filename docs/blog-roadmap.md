@@ -52,8 +52,8 @@ Check both blog indexes each run; they publish daily.
 | 4 | done 2026-11-19 /blog/healthcare-sales-training | Healthcare Sales Training: Programs, Skills and Costs | healthcare sales training | Healthcare | Autocomplete; calls: healthcare 4 |
 | 5 | done 2026-11-20 /blog/sales-role-play-interview | Sales Role Play Interview: Questions, Answers and How to Prepare | sales role play interview questions and answers | Core sales | Autocomplete |
 | 6 | done 2026-11-20 /blog/classroom-management-role-play-scenarios | Classroom Management Role Play Scenarios for Teacher Training | classroom management role play scenarios | Education | Autocomplete |
-| 7 | todo | A Sales Coaching Framework Managers Will Use Every Week | sales coaching framework | Core coaching | Autocomplete |
-| 8 | todo | Patient Communication Training: What Works and How to Practice | patient communication training | Healthcare | Autocomplete |
+| 7 | done 2026-11-21 /blog/sales-coaching-framework | A Sales Coaching Framework Managers Will Use Every Week | sales coaching framework | Core coaching | Autocomplete |
+| 8 | done 2026-11-21 /blog/patient-communication-training | Patient Communication Training: What Works and How to Practice | patient communication training | Healthcare | Autocomplete |
 | 9 | skipped (sister site: https://www.snapsdr.com/blog/discovery-call-questions) | Discovery Call Questions, With Drills for Each Stage | discovery call questions | Core sales | Autocomplete |
 | 10 | todo | Admissions Counselor Training: Parent Calls and Fee Objections | admissions counselor training | Education | Calls: edtech admissions 8 |
 | 11 | todo | Sales Training ROI: Measuring Ramp, First Sale and Win Rate | sales training roi | Pricing | Calls: ROI 5 |

@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'sales-coaching-framework',
+    title: 'A Sales Coaching Framework Managers Will Actually Use Every Week',
+    excerpt:
+      'A 30-minute weekly loop per rep: watch one call moment, name one behavior with a pass line, rehearse it, check it on a live call. Time budget, models and a tracker.',
+    category: 'Coaching Guide',
+    readTime: '11 min read',
+    date: 'November 21, 2026',
+    featured: false,
+  },
+  {
+    slug: 'patient-communication-training',
+    title: 'Patient Communication Training: Programs, Costs and Five Skills to Practice',
+    excerpt:
+      'Seven programs from a $50 Mayo Clinic module to a six-month CMPA course, what a 55-study review says works, five skills with scripts and drills, and a rubric to measure change.',
+    category: 'Training Guide',
+    readTime: '12 min read',
+    date: 'November 21, 2026',
+    featured: false,
+  },
+  {
     slug: 'sales-role-play-interview',
     title: 'Sales Role Play Interview: Questions, Answers and How to Prepare',
     excerpt:
