@@ -172,7 +172,12 @@ export default function ObjectionHandlingPage() {
           <Link href="/blog/how-much-does-sales-training-cost#cost-per-practice" className={LINK}>
             sales training cost guide
           </Link>{' '}
-          works out what one practice repetition costs with a manager and with an AI buyer.
+          works out what one practice repetition costs with a manager and with an AI buyer. Managers
+          who want to fold these drills into a weekly routine can use our{' '}
+          <Link href="/blog/sales-coaching-framework" className={LINK}>
+            sales coaching framework
+          </Link>
+          , which turns one objection from a real call into a practice round and a live-call check.
         </p>
       </Section>
 

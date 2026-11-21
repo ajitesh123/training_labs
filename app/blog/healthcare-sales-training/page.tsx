@@ -291,7 +291,7 @@ export default function HealthcareSalesTrainingPage() {
 
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
-        <RelatedReading slugs={['how-much-does-sales-training-cost', 'best-ai-sales-training-tools-2026', 'ai-roleplay-pricing']} />
+        <RelatedReading slugs={['how-much-does-sales-training-cost', 'best-ai-sales-training-tools-2026', 'ai-roleplay-pricing', 'patient-communication-training']} />
       </section>
     </PostShell>
   )
