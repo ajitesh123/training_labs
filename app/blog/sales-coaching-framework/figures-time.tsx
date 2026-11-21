@@ -67,14 +67,14 @@ export function TimeBudget() {
             </div>
           </div>
 
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs">
+          <ul className="grid grid-cols-1 gap-x-4 gap-y-1.5 text-xs sm:grid-cols-2">
             {parts.map((p) => (
               <li key={p.label} className="flex items-center justify-between gap-2">
                 <span className="flex items-center gap-2 text-ink-2">
                   <span className={`h-3 w-3 shrink-0 border-[1.5px] border-ink ${p.fill}`} />
                   {p.label}
                 </span>
-                <span className="font-mono font-semibold text-ink">{(p.value / 60).toFixed(1)} h</span>
+                <span className="whitespace-nowrap font-mono font-semibold text-ink">{(p.value / 60).toFixed(1)} h</span>
               </li>
             ))}
           </ul>
@@ -120,7 +120,7 @@ const TRACKS: Record<Rep, { weeks: Week[]; verdict: string; tone: 'green' | 'red
       { calls: [false, true, false, false], focus: 'b' },
       { calls: [true, false, true, false], focus: 'b' },
     ],
-    verdict: 'Week 4: passed twice running, next behavior',
+    verdict: 'Wk 5: next behavior',
     tone: 'green',
   },
   stalled: {
@@ -132,7 +132,7 @@ const TRACKS: Record<Rep, { weeks: Week[]; verdict: string; tone: 'green' | 'red
       { calls: [true, false, true, false], focus: 'a' },
       { calls: [true, true, false, true], focus: 'a' },
     ],
-    verdict: 'Week 4: stuck at 1 of 4, practice round made harder',
+    verdict: 'Wk 5: harder practice',
     tone: 'red',
   },
 }
@@ -150,7 +150,7 @@ export function BehaviorTracker() {
   return (
     <Figure
       title="Six weeks of Friday checks: is the coached behavior showing up on live calls?"
-      caption="Example data for two reps, four recorded calls checked per week. Rule used here: move on after three of four calls pass for two weeks running. A rep who passes practice rounds but not live calls needs a harder or more realistic practice round, not more talk."
+      caption="Example data for two reps, four recorded calls checked per week. Rule used here: move on after three of four calls pass for two weeks running. Rep B’s practice round got harder from week 5. A rep who passes practice rounds but not live calls needs a harder or more realistic practice round, not more talk."
     >
       <div ref={ref}>
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
@@ -182,10 +182,16 @@ export function BehaviorTracker() {
                 </span>
                 <div className="grid grid-cols-4 gap-1.5">
                   {w.calls.map((ok, ci) => (
-                    <span key={ci} className="grid h-8 place-items-center border-2 border-ink bg-paper">
+                    <span
+                      key={ci}
+                      className={`grid h-8 place-items-center border-2 border-ink transition-colors duration-300 motion-reduce:transition-none ${
+                        inView ? (ok ? 'bg-mint' : 'bg-peach') : 'bg-paper'
+                      }`}
+                      style={{ transitionDelay: `${0.2 + wi * 0.25 + ci * 0.06}s` }}
+                    >
                       <span
-                        className={`font-mono text-[15px] font-bold leading-none opacity-0 motion-reduce:opacity-100 ${ok ? 'text-stamp-green' : 'text-stamp-red'}`}
-                        style={{ '--rot': ok ? '-6deg' : '5deg', ...(inView ? { animation: `${STAMP_IN} ${0.2 + wi * 0.35 + ci * 0.07}s` } : {}) } as CSSProperties}
+                        className={`font-mono text-[18px] font-bold leading-none opacity-0 motion-reduce:opacity-100 ${ok ? 'text-stamp-green' : 'text-stamp-red'}`}
+                        style={{ '--rot': ok ? '-6deg' : '5deg', ...(inView ? { animation: `${STAMP_IN} ${0.2 + wi * 0.25 + ci * 0.06}s` } : {}) } as CSSProperties}
                       >
                         {ok ? '✓' : '✗'}
                       </span>
@@ -200,7 +206,7 @@ export function BehaviorTracker() {
         <div className="mt-4 flex justify-end">
           <span
             className={`tl-stamp ${t.tone === 'green' ? 'text-stamp-green' : 'text-stamp-red'}`}
-            style={{ '--rot': '-4deg', ...(inView ? { animation: `tl-stamp 0.32s cubic-bezier(0.3, 1.6, 0.6, 1) forwards ${0.4 + t.weeks.length * 0.35}s` } : {}) } as CSSProperties}
+            style={{ '--rot': '-4deg', ...(inView ? { animation: `tl-stamp 0.32s cubic-bezier(0.3, 1.6, 0.6, 1) forwards ${0.4 + t.weeks.length * 0.25}s` } : {}) } as CSSProperties}
           >
             {t.verdict}
           </span>

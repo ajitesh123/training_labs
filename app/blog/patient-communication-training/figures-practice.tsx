@@ -117,10 +117,16 @@ export function RubricScore() {
               <span className="min-w-0 text-[13.5px] leading-snug text-ink sm:text-sm">{r.label}</span>
               <span className="flex shrink-0 gap-1.5">
                 {[0, 1].map((box) => (
-                  <span key={box} className="grid h-6 w-6 place-items-center border-2 border-ink bg-sheet">
+                  <span
+                    key={box}
+                    className={`grid h-7 w-7 place-items-center border-2 border-ink transition-colors duration-300 motion-reduce:transition-none ${
+                      inView && box < r[take] ? 'bg-mint' : 'bg-sheet'
+                    }`}
+                    style={{ transitionDelay: `${0.25 + i * 0.25 + box * 0.12}s` }}
+                  >
                     {box < r[take] && (
                       <span
-                        className="font-mono text-[14px] font-bold leading-none text-stamp-green opacity-0 motion-reduce:opacity-100"
+                        className="font-mono text-[17px] font-bold leading-none text-stamp-green opacity-0 motion-reduce:opacity-100"
                         style={inView ? { animation: `${STAMP_IN} ${0.25 + i * 0.25 + box * 0.12}s` } : undefined}
                       >
                         ✓
