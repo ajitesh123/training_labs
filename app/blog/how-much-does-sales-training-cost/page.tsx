@@ -329,6 +329,14 @@ export default function SalesTrainingCostPage() {
           training reps forget or how much revenue programs add. Kayvon Kay’s 2026 comparison
           warns that most of the famous ones cannot be traced to a real study, and we have left
           them out of this post. Ask each vendor for evidence from customers like you instead.
+          To measure the return yourself, see our guide to{' '}
+          <Link
+            href="/blog/sales-training-roi"
+            className="text-signal underline decoration-signal/40 underline-offset-2 hover:decoration-signal"
+          >
+            sales training ROI
+          </Link>
+          .
         </p>
       </Section>
 
