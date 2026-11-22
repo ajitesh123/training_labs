@@ -53,8 +53,8 @@ export function ProgramsSection() {
         <ExtLink href={SRC.bls}>May 2025 BLS median</ExtLink> for educational, guidance and career
         counselors and advisors, $30.93 an hour, or $1,237 for 40 hours. NACCAP’s
         microcourses are the only ones of the four that name sales and handling hard questions as
-        topics. RNL’s track is the most complete, and the only one that lists role-play, but it takes
-        three separate two-day sessions to reach the level that includes it.
+        topics. RNL’s track is the most complete and the only one that lists role-play, but only at
+        its Gold level, the third of three two-day sessions.
       </p>
       <ProgramMatrix />
       <p>

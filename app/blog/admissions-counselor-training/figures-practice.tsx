@@ -97,17 +97,17 @@ export function ConversationSwitcher() {
           <p className="mt-2 text-[13px] text-ink-2">Underneath: {t.under}</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className={`${fade} relative border-2 border-ink bg-sheet p-4 pt-9`} style={{ animationDelay: '120ms' }}>
-            <span className="tl-stamp absolute left-3 top-2.5 text-stamp-red" style={stamp(inView, 0.35, '-5deg')}>
+          <div className={`${fade} border-2 border-ink bg-sheet p-4`} style={{ animationDelay: '120ms' }}>
+            <span className="tl-stamp mb-3 text-stamp-red" style={stamp(inView, 0.35, '-5deg')}>
               Weak
             </span>
             <p className="text-[14px] leading-snug text-ink-2">{t.weak}</p>
           </div>
           <div
-            className={`${fade} relative border-2 border-ink bg-mint p-4 pt-9 shadow-[5px_5px_0_var(--color-ink)]`}
+            className={`${fade} border-2 border-ink bg-mint p-4 shadow-[5px_5px_0_var(--color-ink)]`}
             style={{ animationDelay: '240ms' }}
           >
-            <span className="tl-stamp absolute left-3 top-2.5 text-stamp-green" style={stamp(inView, 0.6, '4deg')}>
+            <span className="tl-stamp mb-3 text-stamp-green" style={stamp(inView, 0.6, '4deg')}>
               Strong
             </span>
             <p className="text-[14px] leading-snug text-ink">{t.strong}</p>
@@ -167,13 +167,13 @@ export function RubricScorer() {
             const score = c[round]
             return (
               <li key={c.label} className="grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1.5 sm:grid-cols-[1.3fr_1fr_auto]">
-                <span className="text-[13.5px] leading-snug text-ink">{c.label}</span>
+                <span className="col-start-1 row-start-1 text-[13.5px] leading-snug text-ink">{c.label}</span>
                 <span
-                  className={`tl-mono row-start-1 w-14 text-right text-[10.5px] font-bold sm:col-start-3 ${score >= PASS ? 'text-stamp-green' : 'text-stamp-red'}`}
+                  className={`tl-mono col-start-2 row-start-1 w-14 text-right text-[10.5px] font-bold sm:col-start-3 ${score >= PASS ? 'text-stamp-green' : 'text-stamp-red'}`}
                 >
                   {score >= PASS ? 'Pass' : 'Not yet'}
                 </span>
-                <div className="col-span-2 grid grid-cols-4 gap-1 sm:col-span-1 sm:col-start-2 sm:row-start-1">
+                <div className="col-span-2 col-start-1 row-start-2 grid grid-cols-4 gap-1 sm:col-span-1 sm:col-start-2 sm:row-start-1">
                   {Array.from({ length: MAX }, (_, k) => (
                     <span key={k} className="h-4 border-2 border-ink bg-paper">
                       <span

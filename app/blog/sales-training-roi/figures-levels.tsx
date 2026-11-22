@@ -86,7 +86,7 @@ export function LevelLadder() {
   const lvl = LEVELS[active]
   return (
     <Figure
-      title="Six levels of evidence: climb them in order, starting with the cheap ones"
+      title="Five levels of evidence, plus inputs: climb them in order, cheapest first"
       caption="Levels from the ROI Institute’s evaluation framework. The sales examples and timings are our suggestions; the last line in the panel quotes the published retail case. Click a step."
       source="ROI Institute, Measuring the Success of Sales Training (Patti P. Phillips, March 2024)."
     >

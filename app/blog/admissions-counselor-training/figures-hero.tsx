@@ -55,7 +55,7 @@ export function ParentCallHero() {
       className="tl-dots relative mb-12 border-2 border-ink bg-sheet px-4 pb-6 pt-5 shadow-[7px_7px_0_var(--color-ink)] sm:px-8"
     >
       <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-        <p className="tl-mono text-[11.5px] font-semibold text-ink-2">[ Parent call · practice round · example ]</p>
+        <p className="tl-mono text-[11.5px] font-semibold text-ink-2">[ Parent call · practice · example ]</p>
         <p className="tl-mono text-[10.5px] text-ink-2">Inquiry follow-up · 11 min</p>
       </div>
       <ol className="divide-y-2 divide-dashed divide-ink/25 border-2 border-ink bg-sheet">

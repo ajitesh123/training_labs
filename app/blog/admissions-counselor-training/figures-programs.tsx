@@ -33,8 +33,34 @@ export function ProgramMatrix() {
       source="NACAC, AACRAO, NACCAP and RNL program pages, November 2026."
     >
       <div ref={ref}>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[520px] border-2 border-ink bg-paper text-left">
+        <ul className="space-y-3 sm:hidden">
+          {PROGRAMS.map((p, i) => (
+            <li key={p.name} className="border-2 border-ink bg-paper p-3">
+              <p className="text-[13.5px] font-semibold leading-snug text-ink">{p.name}</p>
+              <p className="mb-2 font-mono text-[10.5px] text-ink-2">{p.price}</p>
+              <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                {p.covers.map((c, j) => (
+                  <p
+                    key={TOPICS[j]}
+                    className={`flex items-center gap-1.5 px-1 text-[11.5px] text-ink ${j === PRACTICE ? 'col-span-2 bg-butter font-semibold' : ''}`}
+                  >
+                    <span
+                      className={`inline-block w-4 font-mono text-[16px] font-bold leading-none opacity-0 motion-reduce:opacity-100 ${
+                        c ? 'text-stamp-green' : 'text-stamp-red'
+                      }`}
+                      style={stamp(inView, 0.2 + i * 0.35 + j * 0.06, j % 2 ? '6deg' : '-6deg')}
+                    >
+                      {c ? '✓' : '✗'}
+                    </span>
+                    {TOPICS[j]}
+                  </p>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="hidden sm:block">
+          <table className="w-full border-2 border-ink bg-paper text-left">
             <thead>
               <tr className="border-b-2 border-ink">
                 <th className="tl-mono p-2 text-[10px] font-semibold text-ink">Program</th>
@@ -58,7 +84,7 @@ export function ProgramMatrix() {
                   {p.covers.map((c, j) => (
                     <td key={TOPICS[j]} className={`p-2 text-center ${j === PRACTICE ? 'bg-butter/40' : ''}`}>
                       <span
-                        className={`inline-block font-mono text-[16px] font-bold leading-none opacity-0 motion-reduce:opacity-100 ${
+                        className={`inline-block font-mono text-[19px] font-bold leading-none opacity-0 motion-reduce:opacity-100 ${
                           c ? 'text-stamp-green' : 'text-stamp-red'
                         }`}
                         style={stamp(inView, 0.2 + i * 0.35 + j * 0.06, j % 2 ? '6deg' : '-6deg')}

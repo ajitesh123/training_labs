@@ -13,7 +13,7 @@ const usdK = (n: number) => `$${Math.round(n / 1000).toLocaleString('en-US')}K`
 // ------------------------------------------------------------------------------
 const X0 = 34
 const X1 = 312
-const Y_TOP = 18
+const Y_TOP = 22
 const Y_BASE = 142
 const MONTHS = 12
 const mx = (m: number) => X0 + (m / MONTHS) * (X1 - X0)
@@ -39,22 +39,22 @@ export function RampCurve() {
       source="The Bridge Group, AE Models, Motions & Metrics 2026 (June 2026): 6.2-month average ramp, $960K median AE quota."
     >
       <div ref={ref} className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-        <svg viewBox="0 0 320 168" className="w-full border-2 border-ink bg-paper" role="img" aria-label="Two ramp curves, current and faster">
+        <svg viewBox="0 0 320 172" className="w-full border-2 border-ink bg-paper" role="img" aria-label="Two ramp curves, current and faster">
           {[0, 3, 6, 9, 12].map((m) => (
             <g key={m}>
               <line x1={mx(m)} x2={mx(m)} y1={Y_TOP} y2={Y_BASE} stroke="var(--color-ink)" strokeOpacity="0.12" />
-              <text x={mx(m)} y={Y_BASE + 14} textAnchor="middle" className="fill-ink-2 font-mono text-[8px]">
+              <text x={mx(m)} y={Y_BASE + 14} textAnchor="middle" className="fill-ink-2 font-mono text-[10px]">
                 {m}
               </text>
             </g>
           ))}
-          <text x={X1} y={Y_BASE + 24} textAnchor="end" className="fill-ink-2 font-mono text-[7.5px] uppercase">
+          <text x={X1} y={Y_BASE + 25} textAnchor="end" className="fill-ink-2 font-mono text-[9px] uppercase">
             months after start
           </text>
-          <text x={X0 - 4} y={Y_TOP + 3} textAnchor="end" className="fill-ink-2 font-mono text-[7.5px]">
+          <text x={X0 - 4} y={Y_TOP + 3} textAnchor="end" className="fill-ink-2 font-mono text-[9px]">
             100%
           </text>
-          <text x={X0 - 4} y={Y_BASE} textAnchor="end" className="fill-ink-2 font-mono text-[7.5px]">
+          <text x={X0 - 4} y={Y_BASE} textAnchor="end" className="fill-ink-2 font-mono text-[9px]">
             0
           </text>
           <polygon
@@ -81,9 +81,14 @@ export function RampCurve() {
             strokeWidth="3"
             style={draw(0.5)}
           />
-          <text x={mx(ramp) + 4} y={Y_TOP + 16} className="fill-ink font-mono text-[8px]">
-            today: {ramp} mo
+          <text x={mx(ramp) + 5} y={Y_TOP + 18} className="fill-ink-2 font-mono text-[10px]">
+            today {ramp} mo
           </text>
+          {saved > 0 && (
+            <text x={mx(faster) - 5} y={Y_TOP - 5} textAnchor="end" className="fill-ink font-mono text-[10px] font-bold">
+              faster {faster.toFixed(1)} mo
+            </text>
+          )}
         </svg>
         <div className="space-y-4">
           <SliderField label="Months of ramp saved" value={saved} min={0} max={3} step={0.5} onChange={setSaved} format={(n) => `${n} mo`} />
@@ -206,7 +211,7 @@ export function RoiCalculator() {
           <SliderField label="Gross margin" value={i.margin} min={5} max={95} step={5} onChange={set('margin')} format={(n) => `${n}%`} />
           <SliderField label="Share credited to training" value={i.credit} min={0} max={100} step={5} onChange={set('credit')} format={(n) => `${n}%`} hint="From your comparison group, or a conservative estimate" />
         </div>
-        <div className="h-fit border-2 border-ink bg-paper p-5 lg:sticky lg:top-28">
+        <div className="order-first h-fit border-2 border-ink bg-paper p-5 shadow-[5px_5px_0_var(--color-ink)] lg:order-none lg:sticky lg:top-28">
           <p className="tl-mono text-[11px] font-semibold text-ink-2">Year-one ROI</p>
           <CountUp
             value={roi}
