@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'sales-training-roi',
+    title: 'Sales Training ROI: How to Measure Ramp Time, First Sale and Win Rate',
+    excerpt:
+      'The formula, five levels of evidence, how to price ramp time and win rate at margin, why a control group turned 215 percent into 118, and a year-one ROI calculator.',
+    category: 'Pricing Guide',
+    readTime: '12 min read',
+    date: 'November 22, 2026',
+    featured: false,
+  },
+  {
+    slug: 'admissions-counselor-training',
+    title: 'Admissions Counselor Training: Programs, Parent Calls and Fee Conversations',
+    excerpt:
+      'NACAC, AACRAO, NACCAP and RNL compared on price and practice, the federal rules on pay and promises, six parent conversations to rehearse, a rubric and a 30-day plan.',
+    category: 'Training Guide',
+    readTime: '12 min read',
+    date: 'November 22, 2026',
+    featured: false,
+  },
+  {
     slug: 'sales-coaching-framework',
     title: 'A Sales Coaching Framework Managers Will Actually Use Every Week',
     excerpt:
