@@ -57,8 +57,8 @@ Check both blog indexes each run; they publish daily.
 | 9 | skipped (sister site: https://www.snapsdr.com/blog/discovery-call-questions) | Discovery Call Questions, With Drills for Each Stage | discovery call questions | Core sales | Autocomplete |
 | 10 | done 2026-11-22 /blog/admissions-counselor-training | Admissions Counselor Training: Parent Calls and Fee Objections | admissions counselor training | Education | Calls: edtech admissions 8 |
 | 11 | done 2026-11-22 /blog/sales-training-roi | Sales Training ROI: Measuring Ramp, First Sale and Win Rate | sales training roi | Pricing | Calls: ROI 5 |
-| 12 | todo | Pharmaceutical Sales Training: Programs, Certification, Cost | pharmaceutical sales training | Healthcare | Autocomplete |
-| 13 | todo | Cold Call Practice: Drills, Free Options and AI Buyers | cold call practice | Core sales | Autocomplete |
+| 12 | done 2026-11-26 /blog/pharmaceutical-sales-training | Pharmaceutical Sales Training: Programs, Certification, Cost | pharmaceutical sales training | Healthcare | Autocomplete |
+| 13 | done 2026-11-26 /blog/cold-call-practice | Cold Call Practice: Drills, Free Options and AI Buyers | cold call practice | Core sales | Autocomplete |
 | 14 | todo | De-Escalation Training for Healthcare Workers | de-escalation training for healthcare workers | Healthcare | Autocomplete |
 | 15 | todo | Sales Coaching Techniques for Call Reviews | sales coaching techniques | Core coaching | Autocomplete |
 | 16 | todo | De-Escalation Training for Teachers | de-escalation training for teachers | Education | Autocomplete |
