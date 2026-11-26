@@ -133,7 +133,7 @@ export function FeedbackEvidenceFigure() {
       source="Kluger and DeNisi, The effects of feedback interventions on performance, Psychological Bulletin (1996): 607 effect sizes, 23,663 observations, average effect d = 0.41."
     >
       <div ref={ref} className="grid gap-6 md:grid-cols-[1fr_1fr]">
-        <div>
+        <div className="mx-auto w-full max-w-[300px]">
           <div className="grid grid-cols-10 gap-1" aria-hidden>
             {Array.from({ length: 100 }, (_, i) => (
               <span

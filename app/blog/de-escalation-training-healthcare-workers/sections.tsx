@@ -23,12 +23,11 @@ export function TenSkillsSection() {
       </p>
       <TenDomainsFigure />
       <p>
-        Two of the ten get skipped most in training. The first is <strong>establish verbal
+        Two of the ten are the easiest to skip. The first is <strong>establish verbal
         contact</strong>: one person speaks, and everyone else steps back. When a nurse, a doctor
         and a security officer all answer at once, the patient hears noise and a crowd. The second
         is the <strong>debrief</strong>. Talking with the patient and the team after an incident is
-        how a unit learns what set it off and what to try sooner next time, yet it is the first
-        thing dropped on a busy shift.
+        how a unit learns what set it off and what to try sooner next time, and it is easy to drop on a busy shift.
       </p>
       <p>
         The ten skills overlap with everyday patient communication: naming feelings, listening and

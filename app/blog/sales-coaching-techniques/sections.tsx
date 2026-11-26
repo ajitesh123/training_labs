@@ -17,8 +17,7 @@ export function DuringSection() {
       <h3 className={H3}>3. Ask before you tell</h3>
       <p>
         Open with a question about intent, not a verdict: “What did you want to happen when she
-        asked the price?” Then ask what the buyer did next. Most reps find the problem themselves
-        within two questions, and a fix they name is one they will actually try.{' '}
+        asked the price?” Then ask what the buyer did next. Often the rep finds the problem within two questions, and a fix they name is one they will actually try.{' '}
         <ExtLink href={SRC.msc}>MySalesCoach</ExtLink> suggests a useful check for managers mid-session,
         WAIT: why am I talking?
       </p>
@@ -64,13 +63,13 @@ export function AfterSection() {
     <Section id="after" title="After the review: three techniques">
       <h3 className={H3}>6. Redo the moment out loud, three times</h3>
       <p>
-        This is the step most reviews skip and the one that matters most. You play the buyer and
+        This is the step that is easiest to skip, and the one that turns advice into a habit. You play the buyer and
         say the same line each time. The rep answers out loud, you score it on two or three
         checks, and you go again until it passes. Each try takes under a minute.
       </p>
       <RedoRoundsFigure />
       <p>
-        Attempt two is the usual trap: the rep asks the right question, then drops the answer and
+        Attempt two shows a common trap: the rep asks the right question, then drops the answer and
         quotes the price anyway. That is why the checks matter. “Asked before quoting” passes, but
         the price is still not tied to anything the buyer cares about. By attempt three the rep is
         using what the buyer said and ending on a next step. Our guide to{' '}
@@ -137,7 +136,7 @@ export function TimeSection() {
   return (
     <Section id="time" title="How long should a sales call review take?">
       <p>
-        Time is the reason most managers stop reviewing calls. A full call reviewed together
+        Time is what makes call reviews hard to keep up. A full call reviewed together
         costs an hour per rep. A flagged moment costs about 20 minutes. Change the inputs to match
         your team.
       </p>
@@ -145,7 +144,7 @@ export function TimeSection() {
       <p>
         With eight reps and 30-minute calls, whole-call reviews take 8 hours a week and
         one-moment reviews take about 2.7. The difference is not just hours. A shorter review
-        happens every week, and a weekly loop on one moment is what moves behavior. Spend part of
+        happens every week, and repetition every week is what builds a habit. Spend part of
         the freed time on a second review with your newest reps.
       </p>
     </Section>

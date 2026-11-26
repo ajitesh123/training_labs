@@ -18,7 +18,7 @@ export const post: PostSeo = {
     },
     {
       q: 'How long should a sales call review take?',
-      a: 'About 15 minutes of conversation plus a few minutes of preparation, if you review one moment. Listening to a whole 30-minute call together and then discussing it takes an hour per rep, which is why most managers stop doing it after a few weeks.',
+      a: 'About 15 minutes of conversation plus a few minutes of preparation, if you review one moment. Listening to a whole 30-minute call together and then discussing it takes an hour per rep, which is hard to keep up every week.',
     },
     {
       q: 'How do you give feedback on a sales call without the rep getting defensive?',
