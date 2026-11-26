@@ -356,7 +356,7 @@ export default function SalesCoachingFrameworkPage() {
 
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
-        <RelatedReading slugs={['objection-handling-techniques', 'how-much-does-sales-training-cost', 'best-ai-sales-training-tools-2026', 'sales-role-play-interview']} />
+        <RelatedReading slugs={['objection-handling-techniques', 'how-much-does-sales-training-cost', 'best-ai-sales-training-tools-2026', 'sales-coaching-techniques']} />
       </section>
     </PostShell>
   )

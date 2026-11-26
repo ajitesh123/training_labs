@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'de-escalation-training-healthcare-workers',
+    title: 'De-Escalation Training for Healthcare Workers: Requirements, Free Courses and What to Say',
+    excerpt:
+      'What the Joint Commission requires, where violence concentrates by setting, free and paid courses compared, the ten Project BETA skills, five moments to rehearse and a plan.',
+    category: 'Training Guide',
+    readTime: '12 min read',
+    date: 'November 26, 2026',
+    featured: false,
+  },
+  {
+    slug: 'sales-coaching-techniques',
+    title: 'Sales Coaching Techniques: Eight Moves for Reviewing a Call, Shown on One Recording',
+    excerpt:
+      'Pick one moment, let the rep go first, ask before telling, quote the words, model once, redo it three times, play a contrast clip and check the next call. Plus the feedback evidence.',
+    category: 'Coaching Guide',
+    readTime: '11 min read',
+    date: 'November 26, 2026',
+    featured: false,
+  },
+  {
     slug: 'cold-call-practice',
     title: 'Cold Call Practice: Six Drills, Free Options and How to Use an AI Buyer',
     excerpt:

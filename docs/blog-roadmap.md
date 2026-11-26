@@ -59,8 +59,8 @@ Check both blog indexes each run; they publish daily.
 | 11 | done 2026-11-22 /blog/sales-training-roi | Sales Training ROI: Measuring Ramp, First Sale and Win Rate | sales training roi | Pricing | Calls: ROI 5 |
 | 12 | done 2026-11-26 /blog/pharmaceutical-sales-training | Pharmaceutical Sales Training: Programs, Certification, Cost | pharmaceutical sales training | Healthcare | Autocomplete |
 | 13 | done 2026-11-26 /blog/cold-call-practice | Cold Call Practice: Drills, Free Options and AI Buyers | cold call practice | Core sales | Autocomplete |
-| 14 | todo | De-Escalation Training for Healthcare Workers | de-escalation training for healthcare workers | Healthcare | Autocomplete |
-| 15 | todo | Sales Coaching Techniques for Call Reviews | sales coaching techniques | Core coaching | Autocomplete |
+| 14 | done 2026-11-26 /blog/de-escalation-training-healthcare-workers | De-Escalation Training for Healthcare Workers | de-escalation training for healthcare workers | Healthcare | Autocomplete |
+| 15 | done 2026-11-26 /blog/sales-coaching-techniques | Sales Coaching Techniques for Call Reviews | sales coaching techniques | Core coaching | Autocomplete |
 | 16 | todo | De-Escalation Training for Teachers | de-escalation training for teachers | Education | Autocomplete |
 | 17 | todo | Sales Onboarding Checklist: The First 90 Days | sales onboarding checklist | Core sales | Autocomplete |
 | 18 | todo | Insurance Sales Training: Building Agent Skills After the Classroom | insurance sales training | Insurance | Calls: insurance 3; autocomplete |
