@@ -206,7 +206,7 @@ export default function PatientCommunicationTrainingPage() {
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
         <RelatedReading
-          slugs={['healthcare-sales-training', 'parent-teacher-conference-role-play-scenarios', 'classroom-management-role-play-scenarios', 'ai-roleplay-pricing']}
+          slugs={['healthcare-sales-training', 'parent-teacher-conference-role-play-scenarios', 'classroom-management-role-play-scenarios', 'de-escalation-training-healthcare-workers']}
         />
       </section>
     </PostShell>
