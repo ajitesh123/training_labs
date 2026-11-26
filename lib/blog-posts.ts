@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'cold-call-practice',
+    title: 'Cold Call Practice: Six Drills, Free Options and How to Use an AI Buyer',
+    excerpt:
+      'Why 50 live tries at an opener take over 900 dials, what Gong’s data says to drill, six drills with pass lines, six free AI practice options and a five-line rubric.',
+    category: 'Skills Guide',
+    readTime: '11 min read',
+    date: 'November 26, 2026',
+    featured: false,
+  },
+  {
+    slug: 'pharmaceutical-sales-training',
+    title: 'Pharmaceutical Sales Training: Programs, Certification Costs and How Reps Practice the Detail',
+    excerpt:
+      'Certifications from $285 to $2,833, what the PhRMA Code asks companies to teach, how physicians grant time now, the off-label reply, and a detail scored line by line.',
+    category: 'Industry Guide',
+    readTime: '12 min read',
+    date: 'November 26, 2026',
+    featured: false,
+  },
+  {
     slug: 'sales-training-roi',
     title: 'Sales Training ROI: How to Measure Ramp Time, First Sale and Win Rate',
     excerpt:
