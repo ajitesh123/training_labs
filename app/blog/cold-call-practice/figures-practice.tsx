@@ -130,11 +130,12 @@ export function RubricFigure() {
               <span className="text-xs text-ink-2 sm:text-right">{a.notes[i]}</span>
               <div className="flex items-center gap-2 sm:justify-end">
                 <div className="flex h-3 w-16 border-2 border-ink bg-sheet sm:hidden">
-                  <div className={`h-full transition-[width] duration-700 ${FILL[a.scores[i]]}`} style={{ width: inView ? `${(a.scores[i] / 2) * 100}%` : '0%' }} />
+                  <div className={`h-full transition-[width] duration-700 ${FILL[a.scores[i]]}`} style={{ width: inView ? `${(a.scores[i] / 2) * 100}%` : '0%', transitionDelay: `${200 + i * 250}ms` }} />
                 </div>
                 <span
-                  className={`border-2 border-ink px-1.5 font-mono text-xs font-bold text-ink transition-colors duration-500 ${FILL[a.scores[i]]}`}
-                  style={{ transitionDelay: `${i * 120}ms` }}
+                  key={attempt}
+                  className={`border-2 border-ink px-1.5 font-mono text-xs font-bold text-ink opacity-0 motion-reduce:opacity-100 ${FILL[a.scores[i]]}`}
+                  style={inView ? { animation: `tl-pop 0.3s ${0.2 + i * 0.25}s ease-out forwards` } : undefined}
                 >
                   {a.scores[i]}/2
                 </span>
@@ -144,12 +145,12 @@ export function RubricFigure() {
         </ul>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t-2 border-ink pt-3">
           <p className="text-sm text-ink-2">
-            Total <CountUp value={total} start={inView} format={(n) => `${Math.round(n)} / 10`} className="font-mono text-2xl font-bold text-ink" />
+            Total <CountUp value={total} start={inView} format={(n) => `${Math.round(n)} / 10`} durationMs={1400} className="font-mono text-2xl font-bold text-ink" />
           </p>
           <span
             key={attempt}
             className={`tl-stamp whitespace-normal ${total >= 8 ? 'text-stamp-green' : 'text-stamp-red'}`}
-            style={stampIn(inView, 0.4, total >= 8 ? '-4deg' : '4deg')}
+            style={stampIn(inView, 1.6, total >= 8 ? '-4deg' : '4deg')}
           >
             {total >= 8 ? 'Ready to dial' : 'Drill line 3 tomorrow'}
           </span>

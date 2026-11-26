@@ -122,15 +122,15 @@ export function LiveVsPracticeFigure() {
         <div className="border-2 border-ink bg-paper p-4 sm:p-5">
           <p className="tl-mono text-[10.5px] text-ink-2">Live dials needed</p>
           <CountUp value={dials} start={inView} format={int} className="block font-mono text-4xl font-bold text-ink" />
-          <p className="mb-5 text-sm text-ink-2">real prospects reached and spent on a draft opener</p>
+          <p className="mb-5 text-sm text-ink-2">dials to reach {int(i.tries)} prospects, each one hearing a draft opener</p>
           <div className="space-y-4">
             <div>
               <p className="mb-1.5 text-sm font-semibold text-ink">On live calls</p>
-              <StackedBar segments={[{ label: 'Hours of dialing', value: liveHours, colorClass: 'bg-peach' }]} start={inView} format={hrs} scaleMax={scale} />
+              <StackedBar segments={[{ label: 'Hours of dialing', value: liveHours, colorClass: 'bg-peach' }]} start={inView} format={hrs} scaleMax={scale} legendCols={1} />
             </div>
             <div>
               <p className="mb-1.5 text-sm font-semibold text-ink">In practice</p>
-              <StackedBar segments={[{ label: 'Hours of practice', value: practiceHours, colorClass: 'bg-mint' }]} start={inView} format={hrs} scaleMax={scale} />
+              <StackedBar segments={[{ label: 'Hours of practice', value: practiceHours, colorClass: 'bg-mint' }]} start={inView} format={hrs} scaleMax={scale} legendCols={1} />
             </div>
           </div>
           <div className="mt-5 border-2 border-dashed border-ink bg-sheet p-3 text-sm text-ink-2">

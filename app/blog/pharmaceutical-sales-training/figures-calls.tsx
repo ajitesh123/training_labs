@@ -201,7 +201,7 @@ export function DetailScorerFigure() {
             </ul>
             <div className="mt-3 flex items-end justify-between gap-2 border-t-2 border-ink pt-2">
               <span className="tl-mono text-[10.5px] font-semibold text-ink">Score</span>
-              <CountUp value={total} start={inView} format={(n) => `${Math.round(n)} / 10`} durationMs={2600} className="font-mono text-2xl font-bold text-ink" />
+              <CountUp value={total} start={inView} format={(n) => `${Math.round(n)} / 10`} durationMs={s.turns.length * STEP * 1000} className="font-mono text-2xl font-bold text-ink" />
             </div>
             <span
               className={`tl-stamp mt-3 whitespace-normal ${total >= 8 ? 'text-stamp-green' : 'text-stamp-red'}`}

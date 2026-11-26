@@ -34,7 +34,7 @@ export function PracticeVsProductFigure() {
   return (
     <Figure
       title="Where training time goes, and what physicians say they want from a rep"
-      caption="ZS reports that its clients say physicians prefer reps to bring practice knowledge twice as much as product knowledge, yet 90 percent of rep training is on the product. Turning “two to one” into a 67 and 33 percent split is our arithmetic. The topic chips are examples ZS gives of practice problems that block a prescription."
+      caption="ZS reports that its clients say physicians prefer reps to bring practice knowledge twice as much as product knowledge, yet 90 percent of rep training is on the product. Turning “two to one” into a 67 and 33 percent split is our arithmetic. ZS names storage, administration and prior authorization as practice problems that can block a prescription; plan coverage is our addition."
       source="ZS, The future of the pharma sales rep (March 2025)."
     >
       <div ref={ref} className="space-y-6">
