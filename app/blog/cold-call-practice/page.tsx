@@ -21,7 +21,7 @@ export default function ColdCallPracticePage() {
         date={meta.date}
         readTime={meta.readTime}
         title={post.title}
-        lede="Most reps practice cold calling by making cold calls. That is the slowest and most expensive way to get better, because every rough draft of your opener lands on a real prospect. Here is what to practice, six drills with pass lines, the free tools worth trying, and a rubric to score yourself."
+        lede="Most reps get their cold call practice by making cold calls. That is the slowest and most expensive way to get better, because every rough draft of your opener lands on a real prospect. Here is what to practice, six drills with pass lines, the free tools worth trying, and a rubric to score yourself."
       />
       <FirstThirtySecondsHero />
 
