@@ -41,7 +41,11 @@ export function RampSection() {
         companies, 29 percent had no measurement for ramp time at all and 34 percent used a historic
         figure regardless of current reality. Pick one definition (time to first full quarter at
         quota is the most common, used by 41 percent) and record it for every hire before you change
-        anything.
+        anything. Our{' '}
+        <Link href="/blog/sales-onboarding-checklist" className={LINK}>
+          sales onboarding checklist
+        </Link>{' '}
+        puts that definition on the list before day one.
       </p>
     </Section>
   )
