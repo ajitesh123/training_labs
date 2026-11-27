@@ -265,7 +265,7 @@ export default function ClassroomManagementRolePlayPage() {
 
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
-        <RelatedReading slugs={['parent-teacher-conference-role-play-scenarios', 'ai-roleplay-pricing', 'objection-handling-techniques']} />
+        <RelatedReading slugs={['parent-teacher-conference-role-play-scenarios', 'de-escalation-training-for-teachers', 'ai-roleplay-pricing', 'objection-handling-techniques']} />
       </section>
     </PostShell>
   )

@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'de-escalation-training-for-teachers',
+    title: 'De-Escalation Training for Teachers: Free Courses, Program Costs and What to Say in Each Phase',
+    excerpt:
+      'Free IRIS modules to $3,899 instructor certification, who restraint data says gets hurt, the seven phases of the acting-out cycle, five exit-ramp replies and a practice plan.',
+    category: 'Training Guide',
+    readTime: '12 min read',
+    date: 'November 27, 2026',
+    featured: false,
+  },
+  {
+    slug: 'sales-onboarding-checklist',
+    title: 'Sales Onboarding Checklist: The First 90 Days, With an Owner and a Gate for Every Step',
+    excerpt:
+      'Setup before day one, a first month that mixes listening with scored practice, three certification gates, SDR vs AE tracks, and why 6.2-month AE ramp makes it worth writing.',
+    category: 'Onboarding Guide',
+    readTime: '12 min read',
+    date: 'November 27, 2026',
+    featured: false,
+  },
+  {
     slug: 'de-escalation-training-healthcare-workers',
     title: 'De-Escalation Training for Healthcare Workers: Requirements, Free Courses and What to Say',
     excerpt:

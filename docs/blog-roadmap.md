@@ -61,8 +61,8 @@ Check both blog indexes each run; they publish daily.
 | 13 | done 2026-11-26 /blog/cold-call-practice | Cold Call Practice: Drills, Free Options and AI Buyers | cold call practice | Core sales | Autocomplete |
 | 14 | done 2026-11-26 /blog/de-escalation-training-healthcare-workers | De-Escalation Training for Healthcare Workers | de-escalation training for healthcare workers | Healthcare | Autocomplete |
 | 15 | done 2026-11-26 /blog/sales-coaching-techniques | Sales Coaching Techniques for Call Reviews | sales coaching techniques | Core coaching | Autocomplete |
-| 16 | todo | De-Escalation Training for Teachers | de-escalation training for teachers | Education | Autocomplete |
-| 17 | todo | Sales Onboarding Checklist: The First 90 Days | sales onboarding checklist | Core sales | Autocomplete |
+| 16 | done 2026-11-27 /blog/de-escalation-training-for-teachers | De-Escalation Training for Teachers | de-escalation training for teachers | Education | Autocomplete |
+| 17 | done 2026-11-27 /blog/sales-onboarding-checklist | Sales Onboarding Checklist: The First 90 Days | sales onboarding checklist | Core sales | Autocomplete |
 | 18 | todo | Insurance Sales Training: Building Agent Skills After the Classroom | insurance sales training | Insurance | Calls: insurance 3; autocomplete |
 | 19 | todo | Build vs Buy: Can You Run Sales Roleplay on ChatGPT? | chatgpt role play sales training | AI roleplay | Calls: in-house build 4, existing tool 10 |
 | 20 | todo | Real Estate Sales Training: Scripts and Practice Plans | real estate sales training | Real estate | Autocomplete |
