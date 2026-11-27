@@ -89,7 +89,7 @@ export function GatesSection() {
         Good gates share four features: a written rubric, a pass line, a retry date, and the same
         rubric used later on real calls, so a score of 3 means the same thing in practice and on the
         phone. A failed first attempt is normal and useful. It tells the manager exactly which drill
-        to assign, here “who else decides”, instead of a general note to work on discovery.
+        to assign, here putting a number on the impact, instead of a general note to work on discovery.
       </p>
     </Section>
   )
@@ -159,7 +159,7 @@ export function RoleSection() {
 // ------------------------------------------------------------------------------
 export function PracticeSection() {
   return (
-    <Section id="practice" title="Where practice fits, and how much to plan">
+    <Section id="practice" title="Where practice fits in sales onboarding">
       <p>
         Reps say the gap is practice and feedback, not content. Salesforce’s seventh State of Sales
         report surveyed 4,050 sales professionals in 22 countries:

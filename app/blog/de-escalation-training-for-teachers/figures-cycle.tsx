@@ -20,6 +20,9 @@ const PHASES: Phase[] = [
   { name: 'Recovery', height: 22, fill: 'bg-mint', see: 'Subdued, may not want to talk about it.', goal: 'Restore routine, then repair.', say: '“Welcome back. Here is where we are. Let’s talk at lunch about what would help next time.”', avoid: 'Skipping the debrief, or holding a grudge.' },
 ]
 
+const SHORT = ['Calm', 'Trigger', 'Agitation', 'Accel.', 'Peak', 'De-esc.', 'Recovery']
+const TINY = ['Calm', 'Trig.', 'Agit.', 'Accel.', 'Peak', 'De-esc.', 'Recov.']
+
 export function PhasePlaybookFigure() {
   const { ref, inView } = useInView<HTMLDivElement>()
   const [active, setActive] = useState(2)
@@ -50,7 +53,7 @@ export function PhasePlaybookFigure() {
             >
               <span
                 className={`block border-2 border-b-0 border-ink transition-all duration-700 ease-out motion-reduce:transition-none ${ph.fill} ${
-                  active === i ? 'shadow-[4px_-4px_0_var(--color-ink)]' : 'opacity-60 hover:opacity-100'
+                  active === i ? 'shadow-[4px_-4px_0_var(--color-ink)]' : 'opacity-80 hover:opacity-100'
                 }`}
                 style={{ height: inView ? `${ph.height}%` : '0%', transitionDelay: `${i * 80}ms` }}
               />
@@ -63,7 +66,10 @@ export function PhasePlaybookFigure() {
               key={ph.name}
               className={`tl-mono flex-1 text-center text-[8.5px] leading-tight sm:text-[10.5px] ${active === i ? 'font-bold text-ink' : 'text-ink-2'}`}
             >
-              {i + 1}. {ph.name.length > 9 ? `${ph.name.slice(0, 6)}.` : ph.name}
+              <span className="sm:hidden">{TINY[i]}</span>
+              <span className="hidden sm:inline">
+                {i + 1}. {SHORT[i]}
+              </span>
             </p>
           ))}
         </div>

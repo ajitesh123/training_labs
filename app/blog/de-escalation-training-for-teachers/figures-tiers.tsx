@@ -7,13 +7,13 @@ import { Figure, Segmented, useInView } from '@/components/blog/figures'
 // training tiers: who needs which level, from one CPI provider's school menu
 // ------------------------------------------------------------------------------
 type TierKey = 'all' | 'classroom' | 'crisis'
-type Tier = { key: TierKey; title: string; who: string; hours: string; course: string; price: string; width: string; fill: string }
+type Tier = { key: TierKey; title: string; who: string; hours: string; short: string; course: string; price: string; width: string; fill: string }
 
 // Region 8 Education Service Center (Indiana), CPI trainings, read November 2026.
 const TIERS: Tier[] = [
-  { key: 'crisis', title: 'Crisis team', who: 'A few selected staff designated to intervene in a crisis', hours: '2 h online + 6 h in person', course: 'Nonviolent Crisis Intervention, with physical skills', price: '$50 per participant', width: '42%', fill: 'bg-peach' },
-  { key: 'classroom', title: 'Classroom', who: 'Teachers, administrators and support staff', hours: '6 h in person', course: 'Verbal Intervention, hands-off', price: '$50 per participant', width: '72%', fill: 'bg-butter' },
-  { key: 'all', title: 'Everyone', who: 'Any staff who deal with students or parents', hours: '2 h, in person or virtual', course: 'De-escalation basics, no certification', price: '$300 per session', width: '100%', fill: 'bg-mint' },
+  { key: 'crisis', title: 'Crisis team', who: 'A few selected staff designated to intervene in a crisis', hours: '2 h online + 6 h in person', short: '2 h + 6 h', course: 'Nonviolent Crisis Intervention, with physical skills', price: '$50 per participant', width: '52%', fill: 'bg-peach' },
+  { key: 'classroom', title: 'Classroom', who: 'Teachers, administrators and support staff', hours: '6 h in person', short: '6 h', course: 'Verbal Intervention, hands-off', price: '$50 per participant', width: '76%', fill: 'bg-butter' },
+  { key: 'all', title: 'Everyone', who: 'Any staff who deal with students or parents', hours: '2 h, in person or virtual', short: '2 h', course: 'De-escalation basics, no certification', price: '$300 per session', width: '100%', fill: 'bg-mint' },
 ]
 
 type Role = 'driver' | 'office' | 'teacher' | 'ap' | 'para'
@@ -49,12 +49,12 @@ export function TrainingTiersFigure() {
                 <div
                   key={t.key}
                   className={`border-2 border-ink px-2 py-2.5 text-center transition-all duration-700 ease-out motion-reduce:transition-none ${t.fill} ${
-                    on ? 'shadow-[5px_5px_0_var(--color-ink)]' : 'opacity-50'
+                    on ? 'shadow-[5px_5px_0_var(--color-ink)]' : 'opacity-80'
                   }`}
                   style={{ width: inView ? t.width : '0%', transitionDelay: inView ? `${(2 - i) * 150}ms` : '0ms' }}
                 >
                   <p className="tl-mono truncate text-[10.5px] font-bold text-ink sm:text-[11.5px]">{t.title}</p>
-                  <p className="tl-mono truncate text-[9.5px] text-ink-2 sm:text-[10.5px]">{t.hours}</p>
+                  <p className="tl-mono truncate text-[9.5px] text-ink-2 sm:text-[10.5px]">{t.short}</p>
                 </div>
               )
             })}

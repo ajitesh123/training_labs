@@ -21,7 +21,7 @@ export default function SalesOnboardingChecklistPage() {
         date={meta.date}
         readTime={meta.readTime}
         title={post.title}
-        lede="Most sales onboarding goes wrong in the first week, before anyone notices: a CRM login that does not work, a calendar with nothing on it, a new rep who listens to calls for a month and never says a word out loud. Here is a 90-day checklist with an owner for every item and a gate at the end of every phase, plus what a slow ramp costs."
+        lede="Most sales onboarding goes wrong in the first week, before anyone notices: a CRM login that does not work, a calendar with nothing on it, a new rep who listens to calls for a month and never says a word out loud. Here is a 90-day checklist with an owner for every item and a gate at the end of every phase, plus how to fit practice into it."
       />
       <NinetyDayTrackHero />
 

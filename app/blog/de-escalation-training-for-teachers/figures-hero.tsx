@@ -20,6 +20,7 @@ function useReducedMotion(): boolean {
 // ------------------------------------------------------------------------------
 const XS = [40, 133, 227, 320, 413, 507, 600]
 const SHORT = ['Calm', 'Trigger', 'Agitation', 'Accel.', 'Peak', 'De-esc.', 'Recovery']
+const TINY = ['Calm', 'Trig.', 'Agit.', 'Accel.', 'Peak', 'De-esc.', 'Recov.']
 
 // Catmull-Rom through the seven phase points, drawn as cubic Beziers.
 function smooth(ys: number[]): string {
@@ -113,12 +114,10 @@ export function TwoAdultsHero() {
           ]}
         />
       </div>
-      <div className="border-2 border-ink bg-paper">
+      <div className="relative border-2 border-ink bg-paper">
+        <p className="tl-mono absolute left-2 top-1.5 text-[9.5px] font-bold text-ink sm:left-3 sm:top-2 sm:text-[11px]">Crisis zone</p>
         <svg viewBox="0 0 640 232" className="block h-auto w-full" role="img" aria-label="Escalation curve across the seven phases">
           <rect x="0" y="0" width="640" height="62" fill="var(--color-peach)" fillOpacity="0.45" />
-          <text x="12" y="20" className="font-mono" fontSize="12" fontWeight="700" fill="var(--color-ink)">
-            CRISIS ZONE
-          </text>
           {XS.map((x) => (
             <line key={x} x1={x} x2={x} y1="62" y2="222" stroke="var(--color-ink)" strokeOpacity="0.12" strokeWidth="1.5" strokeDasharray="4 5" />
           ))}
@@ -132,9 +131,10 @@ export function TwoAdultsHero() {
           </g>
         </svg>
         <div className="grid grid-cols-7 border-t-2 border-ink">
-          {SHORT.map((l) => (
+          {SHORT.map((l, i) => (
             <p key={l} className="tl-mono px-0.5 py-1.5 text-center text-[8.5px] leading-tight text-ink-2 sm:text-[10.5px]">
-              {l}
+              <span className="sm:hidden">{TINY[i]}</span>
+              <span className="hidden sm:inline">{l}</span>
             </p>
           ))}
         </div>

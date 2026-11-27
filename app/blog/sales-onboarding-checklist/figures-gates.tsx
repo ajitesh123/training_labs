@@ -1,7 +1,7 @@
 'use client'
 
 import { type CSSProperties, useState } from 'react'
-import { CountUp, Figure, Segmented, type Segment, StackedBar, useInView } from '@/components/blog/figures'
+import { CountUp, Figure, Segmented, useInView } from '@/components/blog/figures'
 
 const STAMP_IN = 'tl-stamp 0.32s cubic-bezier(0.3, 1.6, 0.6, 1) forwards'
 
@@ -126,11 +126,12 @@ const PLANS: Record<Month, { weeks: Week[]; runs: number; stamp: string; good: b
   },
 }
 
-const segments = (w: Week): Segment[] => [
-  { label: 'Listening: sessions, shadowing, recordings', value: w.listen, colorClass: 'bg-sky' },
-  { label: 'Speaking: scored practice runs', value: w.speak, colorClass: 'bg-butter' },
-  { label: 'Live calls', value: w.live, colorClass: 'bg-mint' },
+const PARTS: { key: keyof Week; label: string; fill: string }[] = [
+  { key: 'listen', label: 'Listening: sessions, shadowing, recordings', fill: 'bg-sky' },
+  { key: 'speak', label: 'Speaking: scored practice runs', fill: 'bg-butter' },
+  { key: 'live', label: 'Live calls', fill: 'bg-mint' },
 ]
+const WEEK_MAX = 18
 
 export function FirstMonthFigure() {
   const { ref, inView } = useInView<HTMLDivElement>()
@@ -140,7 +141,7 @@ export function FirstMonthFigure() {
   return (
     <Figure
       title="The first month, two ways: the same hours with a different mix of listening and speaking"
-      caption="Example weeks, not benchmarks. Both plans spend 69 hours on onboarding activities in month one. Practice runs are counted at 20 minutes each, in the first two weeks before any live call."
+      caption="Example weeks, not benchmarks. Both plans spend 69 hours on onboarding activities in month one; the totals under the bars are for the whole month. Practice runs are counted at 20 minutes each, in the first two weeks before any live call."
     >
       <div ref={ref}>
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
@@ -157,14 +158,38 @@ export function FirstMonthFigure() {
             <CountUp value={plan.runs} start={inView} className="font-mono text-lg font-bold text-ink" /> practice runs before the first live call
           </p>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-3">
           {plan.weeks.map((w, i) => (
-            <div key={i}>
-              <p className="tl-mono mb-1.5 text-[10.5px] font-semibold text-ink">Week {i + 1}</p>
-              <StackedBar segments={segments(w)} start={inView} format={(n) => `${Math.round(n)} h`} scaleMax={18} legendCols={2} />
+            <div key={i} className="flex items-center gap-3">
+              <p className="tl-mono w-14 shrink-0 text-[10.5px] font-semibold text-ink">Week {i + 1}</p>
+              <div className="flex h-7 flex-1 overflow-hidden border-2 border-ink bg-paper">
+                {PARTS.map((p) => (
+                  <div
+                    key={p.key}
+                    className={`h-full border-r-2 border-ink transition-[width] duration-700 ease-out last:border-r-0 motion-reduce:transition-none ${p.fill}`}
+                    style={{ width: inView ? `${(w[p.key] / WEEK_MAX) * 100}%` : '0%', transitionDelay: inView ? `${i * 120}ms` : '0ms' }}
+                  />
+                ))}
+              </div>
             </div>
           ))}
         </div>
+        <ul className="mt-4 grid gap-1.5 text-xs sm:grid-cols-3">
+          {PARTS.map((p) => (
+            <li key={p.key} className="flex items-center justify-between gap-2 border-2 border-ink bg-paper px-2 py-1.5">
+              <span className="flex items-center gap-2 text-ink-2">
+                <span className={`h-3 w-3 shrink-0 border-[1.5px] border-ink ${p.fill}`} />
+                {p.label}
+              </span>
+              <CountUp
+                value={plan.weeks.reduce((sum, w) => sum + w[p.key], 0)}
+                start={inView}
+                format={(n) => `${Math.round(n)} h`}
+                className="shrink-0 font-mono font-semibold text-ink"
+              />
+            </li>
+          ))}
+        </ul>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-2 border-ink bg-paper px-3 py-2.5">
           <p className="text-[13.5px] text-ink">
             {plan.good ? 'Twenty-one scored practice runs before a real buyer hears the pitch.' : 'Two weeks of listening, two hours of speaking, then a live buyer.'}
