@@ -221,12 +221,12 @@ export function RestraintGapFigure() {
         <div className="grid grid-cols-2 gap-4 sm:gap-8">
           <div>
             <CountUp value={ENROLLMENT_SHARE} start={inView} format={(n) => `${Math.round(n)}%`} className="block font-mono text-3xl font-bold text-ink" />
-            <p className="tl-mono mb-3 text-[10.5px] text-ink-2">Of all K-12 students</p>
+            <p className="tl-mono mb-3 min-h-[2.6em] text-[10.5px] leading-tight text-ink-2 sm:min-h-0">Of all K-12 students</p>
             <Waffle filled={ENROLLMENT_SHARE} on={inView} fill="bg-butter" />
           </div>
           <div>
             <CountUp value={m.share} start={inView} format={(n) => `${Math.round(n)}%`} className="block font-mono text-3xl font-bold text-ink" />
-            <p className="tl-mono mb-3 text-[10.5px] text-ink-2">Of students {m.label}</p>
+            <p className="tl-mono mb-3 min-h-[2.6em] text-[10.5px] leading-tight text-ink-2 sm:min-h-0">Of students {m.label}</p>
             <Waffle filled={m.share} on={inView} fill="bg-peach" />
           </div>
         </div>
