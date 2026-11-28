@@ -37,7 +37,7 @@ export function PromptDriftFigure() {
   const { ref, inView } = useInView<HTMLDivElement>()
   const [kind, setKind] = useState<PromptKind>('strong')
   const p = PROMPTS[kind]
-  const endAt = 0.3 + p.turns.length * 0.7
+  const endAt = 0.3 + p.turns.length * 0.5
 
   return (
     <Figure
@@ -63,7 +63,7 @@ export function PromptDriftFigure() {
           </div>
           <div className="space-y-2">
             {p.turns.map(([rep, buyer], i) => (
-              <div key={rep} className={inView ? 'blog-fade-up' : 'opacity-0'} style={{ animationDelay: `${0.3 + i * 0.7}s` }}>
+              <div key={rep} className={inView ? 'blog-fade-up' : 'opacity-0'} style={{ animationDelay: `${0.3 + i * 0.5}s` }}>
                 <p className="ml-auto w-fit max-w-[88%] border-2 border-ink bg-sky-soft px-3 py-1.5 text-[13px] leading-snug text-ink">
                   <span className="tl-mono mr-1.5 text-[9.5px] text-ink-2">Rep</span>
                   {rep}

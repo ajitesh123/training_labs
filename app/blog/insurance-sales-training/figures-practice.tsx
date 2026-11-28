@@ -167,6 +167,7 @@ export function PracticeQuarterFigure() {
                 <div key={w} className={`h-14 border-2 border-ink ${w === 0 && inView ? 'bg-peach' : 'bg-paper'} transition-colors duration-500`} />
               ))}
             </div>
+            <p className="tl-mono mt-1 text-[9.5px] text-ink-2">Week 1: a two-day workshop. Weeks 2 to 13: live calls, no practice</p>
           </div>
           <div>
             <p className="mb-1.5 text-sm font-semibold text-ink">Short practice every week</p>

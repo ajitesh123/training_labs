@@ -30,10 +30,13 @@ const CHAT = [
   { who: 'Rep', text: 'What made the last one go unused?' },
 ]
 
-const STEP = 0.32
+const STEP = 0.28
 
 export function RoleplayStackHero() {
   const { ref, inView } = useInView<HTMLDivElement>(0.2)
+  // On phones the stack sits below the chat, so it builds once it is seen.
+  const stack = useInView<HTMLDivElement>(0.3)
+  const built = inView && stack.inView
   const fills: Record<Kind, string> = { built: 'bg-mint', supply: 'bg-butter', missing: 'bg-peach' }
 
   return (
@@ -67,7 +70,7 @@ export function RoleplayStackHero() {
           </div>
           <p className="tl-mono border-t-2 border-ink px-3 py-2 text-[10px] text-ink-2">The conversation itself works well</p>
         </div>
-        <div className="flex flex-col-reverse gap-2">
+        <div ref={stack.ref} className="flex flex-col-reverse gap-2">
           {LAYERS.map((l, i) => {
             const s = STAMPS[l.kind]
             const at = 0.3 + i * STEP
@@ -75,7 +78,7 @@ export function RoleplayStackHero() {
               <div
                 key={l.title}
                 className={`flex items-center justify-between gap-3 border-2 border-ink px-3 py-2 ${fills[l.kind]} ${
-                  inView ? 'blog-fade-up' : 'opacity-0'
+                  built ? 'blog-fade-up' : 'opacity-0'
                 } ${l.kind === 'missing' ? 'shadow-[4px_4px_0_var(--color-ink)]' : ''}`}
                 style={{ animationDelay: `${at}s` }}
               >
@@ -85,7 +88,7 @@ export function RoleplayStackHero() {
                 </div>
                 <span
                   className={`tl-stamp shrink-0 px-1.5 py-1 text-[9.5px] ${s.color}`}
-                  style={stampStyle(inView, at + LAYERS.length * STEP + 0.2, s.rot)}
+                  style={stampStyle(built, at + 0.9, s.rot)}
                 >
                   {s.label}
                 </span>

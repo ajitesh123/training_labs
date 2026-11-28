@@ -77,7 +77,7 @@ export function LinesFigure() {
     <Figure
       title="Same agency, five different calls: what to train for each line"
       caption="The hard moments and drills are examples of what agents commonly face, chosen for this post. The rules summarize the cited source; check your state and carrier for the full requirement."
-      source="TotalCSR (2026); NAIC Model #275 (Spring 2020 edition); eCFR, 42 CFR 422.2267 and 422.2274 (current as of November 2026)."
+      source="TotalCSR (read November 2026); NAIC Model #275 (Spring 2020 edition); eCFR, 42 CFR 422.2267 and 422.2274 (current as of November 2026)."
     >
       <div ref={ref}>
         <div className="mb-5">

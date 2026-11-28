@@ -22,12 +22,14 @@ const LINES = [
   { q: 'Coverage you have now', a: `${usd(WORK_COVER)} through work`, mark: true },
 ] as const
 
-const LINE_GAP = 0.45
+const LINE_GAP = 0.35
 const BARS_AT = LINES.length * LINE_GAP + 0.5
 
 export function FactFinderHero() {
   const { ref, inView } = useInView<HTMLDivElement>(0.2)
-  const sized = useDelayed(inView, BARS_AT * 1000)
+  // On phones the gap box sits below the fact finder, so it waits until it is seen.
+  const gap = useInView<HTMLDivElement>(0.5)
+  const sized = useDelayed(inView && gap.inView, BARS_AT * 1000)
   const pct = (n: number) => `${(n / NEED) * 100}%`
 
   return (
@@ -65,7 +67,7 @@ export function FactFinderHero() {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col border-2 border-ink bg-paper p-4">
+        <div ref={gap.ref} className="flex flex-col border-2 border-ink bg-paper p-4">
           <p className="tl-mono mb-4 border-b-2 border-ink pb-2 text-[11px] font-semibold text-ink">Coverage gap</p>
           <div className="space-y-4">
             <div>

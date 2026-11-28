@@ -64,11 +64,11 @@ export function PathCostFigure() {
       caption="Defaults are example inputs. Build costs exclude the first build and any hosting, sign-in or storage bills; engineering is priced at the BLS May 2025 median wage for software developers before benefits. Per-seat platforms that quote on request are not modeled. ChatGPT Business costs $20 a seat on annual billing."
       source="OpenAI help center and API pricing (November 2026); BLS Occupational Outlook Handbook (August 2026); toughtongueai.com/pricing (November 2026)."
     >
-      <div ref={ref} className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+      <div ref={ref} className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="space-y-4">
           <SliderField label="Reps" value={inputs.reps} min={1} max={50} step={1} onChange={set('reps')} format={(n) => `${n}`} />
           <SliderField
-            label="Practice minutes per rep, per month"
+            label="Minutes per rep a month"
             value={inputs.minutes}
             min={0}
             max={300}
@@ -77,14 +77,14 @@ export function PathCostFigure() {
             format={(n) => `${n} min`}
           />
           <SliderField
-            label="Engineer hours per month (build only)"
+            label="Engineer hours a month"
             value={inputs.devHours}
             min={0}
             max={80}
             step={1}
             onChange={set('devHours')}
             format={(n) => `${n} h`}
-            hint="Fixes, model updates, new scenarios"
+            hint="Build path only: fixes, model updates, new scenarios"
           />
         </div>
         <div className="space-y-5">
@@ -143,7 +143,7 @@ export function BuildBuyFigure() {
       <div ref={ref} className="grid gap-5 md:grid-cols-[1.2fr_1fr]">
         <ul className="space-y-3">
           {QUESTIONS.map((x) => (
-            <li key={x.key} className="flex flex-wrap items-center justify-between gap-2 border-b border-ink/15 pb-3 last:border-b-0">
+            <li key={x.key} className="flex flex-col items-start gap-2 border-b border-ink/15 pb-3 last:border-b-0">
               <span className="text-[14px] text-ink">{x.q}</span>
               <Segmented<YesNo>
                 label={x.q}
