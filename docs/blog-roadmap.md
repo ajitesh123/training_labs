@@ -63,8 +63,8 @@ Check both blog indexes each run; they publish daily.
 | 15 | done 2026-11-26 /blog/sales-coaching-techniques | Sales Coaching Techniques for Call Reviews | sales coaching techniques | Core coaching | Autocomplete |
 | 16 | done 2026-11-27 /blog/de-escalation-training-for-teachers | De-Escalation Training for Teachers | de-escalation training for teachers | Education | Autocomplete |
 | 17 | done 2026-11-27 /blog/sales-onboarding-checklist | Sales Onboarding Checklist: The First 90 Days | sales onboarding checklist | Core sales | Autocomplete |
-| 18 | todo | Insurance Sales Training: Building Agent Skills After the Classroom | insurance sales training | Insurance | Calls: insurance 3; autocomplete |
-| 19 | todo | Build vs Buy: Can You Run Sales Roleplay on ChatGPT? | chatgpt role play sales training | AI roleplay | Calls: in-house build 4, existing tool 10 |
+| 18 | done 2026-11-28 /blog/insurance-sales-training | Insurance Sales Training: Building Agent Skills After the Classroom | insurance sales training | Insurance | Calls: insurance 3; autocomplete |
+| 19 | done 2026-11-28 /blog/chatgpt-sales-training | Build vs Buy: Can You Run Sales Roleplay on ChatGPT? | chatgpt sales training (row keyword had no autocomplete demand on 28 Nov) | AI roleplay | Calls: in-house build 4, existing tool 10 |
 | 20 | todo | Real Estate Sales Training: Scripts and Practice Plans | real estate sales training | Real estate | Autocomplete |
 | 21 | todo | Sales Role Play Rubric: Templates for Scoring Practice | sales role play rubric | Core coaching | Calls: scoring 12 |
 | 22 | todo | BPO Training Program: From New Hire to Live Calls | bpo training program | BPO | Autocomplete; India |
@@ -106,6 +106,8 @@ Check both blog indexes each run; they publish daily.
 | 58 | todo | SaaS Sales Training: Discovery and Demo Drills | saas sales training | Core sales | Calls: B2B SaaS 3 |
 | 59 | todo | Negotiation Exercises for Students and Professors | negotiation exercises for students | Education | Calls: instructors 2 |
 | 60 | todo | Parent Communication Training for School Staff | parent communication training | Education | Autocomplete |
+| 61 | todo | Medicare Agent Training: The 2027 Sales Call Rules, Practiced | medicare agent training | Insurance | CMS CY2027 marketing changes in force 1 Oct 2026 (disclaimer before benefits, no 48-hour SOA wait); autocomplete 28 Nov: medicare agent training, courses, online, medicare broker training |
+| 62 | todo | Insurance Sales Objections: Replies for Life, P&C and Medicare | insurance sales objections | Insurance | Autocomplete 28 Nov: insurance sales objections, overcoming objections in insurance, life insurance sales objections |
 
 ## Key Files
 

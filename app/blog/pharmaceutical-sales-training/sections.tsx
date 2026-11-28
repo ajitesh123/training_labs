@@ -118,7 +118,12 @@ export function OffLabelSection() {
         <ExtLink href={SRC.lsl}>Life Science Leader noted in May 2026</ExtLink>, it acknowledges that
         trained sales staff may share that content when it is kept separate from promotion.
         Companies differ on whether they allow it. Train the reply your own procedure allows, word for
-        word, and rehearse it until it comes out calmly.
+        word, and rehearse it until it comes out calmly. Insurance agents face the same kind of fixed
+        wording on Medicare calls, covered in our guide to{' '}
+        <Link href="/blog/insurance-sales-training" className={LINK}>
+          insurance sales training
+        </Link>
+        .
       </p>
     </Section>
   )
