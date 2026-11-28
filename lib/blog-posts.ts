@@ -10,6 +10,26 @@ export type BlogPostMeta = {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: 'insurance-sales-training',
+    title: 'Insurance Sales Training: Programs, Costs and How Agents Practice After the License',
+    excerpt:
+      'Pre-licensing at $150 to $500, memberships at $200 a month, the Medicare disclaimer rule that changed on October 1, 2026, annuity best interest, objection drills and a practice plan.',
+    category: 'Industry Guide',
+    readTime: '12 min read',
+    date: 'November 28, 2026',
+    featured: false,
+  },
+  {
+    slug: 'chatgpt-sales-training',
+    title: 'ChatGPT Sales Training: How Far Role Play on ChatGPT Goes, and When to Build or Buy',
+    excerpt:
+      'A buyer brief that holds, Live voice limits, the December 11 custom GPT retirement, four gaps for teams, and what building costs next to ChatGPT seats and a platform.',
+    category: 'Buyer’s Guide',
+    readTime: '12 min read',
+    date: 'November 28, 2026',
+    featured: false,
+  },
+  {
     slug: 'de-escalation-training-for-teachers',
     title: 'De-Escalation Training for Teachers: Free Courses, Program Costs and What to Say in Each Phase',
     excerpt:

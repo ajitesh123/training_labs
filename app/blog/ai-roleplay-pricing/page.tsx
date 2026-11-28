@@ -281,7 +281,7 @@ export default function AiRoleplayPricingPage() {
 
       <section className="mb-12">
         <h2 className="tl-mono mb-4 text-sm font-semibold text-ink">[ Related reading ]</h2>
-        <RelatedReading slugs={['how-much-does-sales-training-cost', 'best-ai-sales-training-tools-2026', 'objection-handling-techniques']} />
+        <RelatedReading slugs={['how-much-does-sales-training-cost', 'best-ai-sales-training-tools-2026', 'chatgpt-sales-training', 'objection-handling-techniques']} />
       </section>
     </PostShell>
   )
